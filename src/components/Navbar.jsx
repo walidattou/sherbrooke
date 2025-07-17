@@ -1,33 +1,41 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Grills", href: "/grills" },
-    { name: "Pasta", href: "/pasta" },
-    { name: "Seafood", href: "/seafood" },
-    { name: "Indian", href: "/indian" },
+    { name: t("home"), href: "/" },
+    { name: t("about"), href: "/about" },
+    { name: t("grills"), href: "/grills" },
+    { name: t("seafood"), href: "/seafood" },
+    { name: t("indian"), href: "/indian" },
   ];
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className="bg-[#f5f5f0] shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-gray-900">
-            Resto <span className="text-[#BF9040]">Cabasyl</span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/WhatsApp Image 2025-07-15 at 19.30.17_bea333ee.jpg"
+              alt="Sherbrooke Grill & Pizza Logo"
+              width={120}
+              height={60}
+              className="h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -36,6 +44,37 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Language Toggle & Delivery Buttons */}
+            <div className="flex items-center space-x-3 ml-4">
+              {/* Language Toggle Button */}
+              <motion.button
+                onClick={toggleLanguage}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gray-100 text-gray-700 px-3 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-gray-200 flex items-center space-x-2">
+                <Globe size={16} />
+                <span className="text-sm">{language === "en" ? "FR" : "EN"}</span>
+              </motion.button>
+
+              {/* Uber Eats Button */}
+              <motion.a
+                href="#"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-black text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-gray-800">
+                <span className="text-sm">{t("orderUberEats")}</span>
+              </motion.a>
+
+              {/* DoorDash Button */}
+              <motion.a
+                href="#"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-red-700">
+                <span className="text-sm">{t("orderDoorDash")}</span>
+              </motion.a>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -60,6 +99,42 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Mobile Language Toggle & Delivery Buttons */}
+            <div className="flex flex-col space-y-3 mt-4 pt-4 border-t border-gray-200">
+              {/* Language Toggle Button Mobile */}
+              <motion.button
+                onClick={() => {
+                  toggleLanguage();
+                  setIsOpen(false);
+                }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-gray-100 text-gray-700 px-4 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 hover:bg-gray-200">
+                <Globe size={18} />
+                <span>{language === "en" ? "Français" : "English"}</span>
+              </motion.button>
+
+              {/* Uber Eats Button Mobile */}
+              <motion.a
+                href="#"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-black text-white px-4 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-gray-800"
+                onClick={() => setIsOpen(false)}>
+                <span>{t("orderUberEats")}</span>
+              </motion.a>
+
+              {/* DoorDash Button Mobile */}
+              <motion.a
+                href="#"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-red-600 text-white px-4 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-red-700"
+                onClick={() => setIsOpen(false)}>
+                <span>{t("orderDoorDash")}</span>
+              </motion.a>
+            </div>
           </motion.div>
         )}
       </div>

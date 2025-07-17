@@ -4,8 +4,11 @@ import PageWrapper from "@/components/PageWrapper";
 import DishTable from "@/components/DishTable";
 import { indianData } from "@/data/indian";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Indian() {
+  const { t } = useLanguage();
+
   return (
     <PageWrapper>
       <section className="py-16 bg-gray-50">
@@ -17,11 +20,10 @@ export default function Indian() {
             className="text-center mb-12">
             <div className="bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg p-16 mb-8">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                🍛 Indian Specials
+                🍛 {t("indianTitle")}
               </h1>
               <p className="text-xl text-purple-100 max-w-2xl mx-auto">
-                Authentic Indian dishes with rich curries, aromatic rice, and
-                traditional spices
+                {t("indianDescription")}
               </p>
             </div>
           </motion.div>

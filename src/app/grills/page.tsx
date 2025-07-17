@@ -4,8 +4,11 @@ import PageWrapper from "@/components/PageWrapper";
 import DishTable from "@/components/DishTable";
 import { grillsData } from "@/data/grills";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Grills() {
+  const { t } = useLanguage();
+
   return (
     <PageWrapper>
       <section className="py-16 bg-gray-50">
@@ -17,11 +20,10 @@ export default function Grills() {
             className="text-center mb-12">
             <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-lg p-16 mb-8">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                🔥 Grills
+                🔥 {t("grillsTitle")}
               </h1>
               <p className="text-xl text-orange-100 max-w-2xl mx-auto">
-                Tender grilled meats and vegetables marinated in aromatic spices
-                and cooked to perfection
+                {t("grillsDescription")}
               </p>
             </div>
           </motion.div>

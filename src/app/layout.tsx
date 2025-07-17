@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -10,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Resto Cabasyl - Indian Fusion Restaurant in Montreal",
+  title: "Sherbrooke Grill & Pizza - Indian Fusion Restaurant in Montreal",
   description:
     "Experience the perfect fusion of Indian cuisine, grilled specialties, fresh seafood, and authentic pasta dishes in the heart of Montreal.",
 };
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased font-sans`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <LanguageProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

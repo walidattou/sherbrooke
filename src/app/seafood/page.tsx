@@ -4,8 +4,11 @@ import PageWrapper from "@/components/PageWrapper";
 import DishTable from "@/components/DishTable";
 import { seafoodData } from "@/data/seafood";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Seafood() {
+  const { t } = useLanguage();
+
   return (
     <PageWrapper>
       <section className="py-16 bg-gray-50">
@@ -17,11 +20,10 @@ export default function Seafood() {
             className="text-center mb-12">
             <div className="bg-gradient-to-r from-blue-500 to-teal-600 rounded-lg p-16 mb-8">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                🦐 Seafood
+                🦐 {t("seafoodTitle")}
               </h1>
               <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-                Fresh seafood prepared with traditional Indian spices and
-                contemporary cooking techniques
+                {t("seafoodDescription")}
               </p>
             </div>
           </motion.div>

@@ -243,7 +243,7 @@ export default function Home() {
                 </p>
 
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Every dish at Resto Cabasyl carries the whispers of ancient
+                  Every dish at Sherbrooke Grill & Pizza carries the whispers of ancient
                   spice routes, the warmth of family recipes passed down through
                   generations, and the innovative spirit of contemporary
                   culinary artistry. We don&apos;t just cook food; we craft
@@ -299,7 +299,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              What is <span className="text-[#BF9040]">Cabasyl</span>?
+              What is <span className="text-[#BF9040]">Sherbrooke Grill & Pizza</span>?
             </h2>
             <div className="text-6xl mb-8">🍽️</div>
           </motion.div>
@@ -309,7 +309,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl leading-relaxed mb-8 text-gray-300">
-            Born from a passion for culinary fusion, Cabasyl represents the
+            Born from a passion for culinary fusion, Sherbrooke Grill & Pizza represents the
             bridge between traditional Indian flavors and modern gastronomy. Our
             name reflects our commitment to creating extraordinary dining
             experiences that honor heritage while embracing innovation.

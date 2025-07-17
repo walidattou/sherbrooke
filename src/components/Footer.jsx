@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, ExternalLink } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -14,11 +17,10 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}>
             <h3 className="text-xl font-bold mb-4">
-              Resto <span className="text-[#BF9040]">Cabasyl</span>
+              Sherbrooke <span className="text-[#BF9040]">Grill & Pizza</span>
             </h3>
             <p className="text-gray-400 mb-4">
-              Experience the perfect fusion of Indian cuisine, grilled
-              specialties, and fresh seafood in Montreal.
+              {t("heroSubtitle")}
             </p>
           </motion.div>
 
@@ -27,7 +29,7 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}>
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
+            <h3 className="text-xl font-bold mb-4">{t("contactInfo")}</h3>
             <div className="space-y-3 text-gray-400">
               <div className="flex items-center">
                 <MapPin size={18} className="mr-2 text-[#BF9040]" />
@@ -39,7 +41,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <Mail size={18} className="mr-2 text-[#BF9040]" />
-                <span>info@restocabasyl.ca</span>
+                <span>info@sherbrookegrill.ca</span>
               </div>
               <div className="flex items-center">
                 <Clock size={18} className="mr-2 text-[#BF9040]" />
@@ -53,13 +55,13 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}>
-            <h3 className="text-xl font-bold mb-4">Order Online</h3>
+            <h3 className="text-xl font-bold mb-4">{t("orderOnline")}</h3>
             <div className="space-y-3">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full bg-[#BF9040] hover:bg-[#A67A35] text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2">
-                Order on Uber Eats
+{t("orderUberEats")}
                 <ExternalLink size={16} />
               </motion.button>
 
@@ -67,7 +69,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full bg-transparent border-2 border-[#BF9040] text-[#BF9040] hover:bg-[#BF9040] hover:text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2">
-                Order on DoorDash
+{t("orderDoorDash")}
                 <ExternalLink size={16} />
               </motion.button>
             </div>
@@ -76,7 +78,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Resto Cabasyl. All rights reserved.</p>
+          <p>{t("copyright")}</p>
         </div>
       </div>
     </footer>
