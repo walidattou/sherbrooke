@@ -24,8 +24,8 @@ export default function Home() {
       bgColor: "from-red-500 to-orange-600",
     },
     {
-      title: "Pasta",
-      href: "/pasta",
+      title: "Pasta And Pizza",
+      href: "/pastapizza",
       imagePath: "/images/categories/Pasta.png",
       bgColor: "from-yellow-500 to-orange-500",
     },

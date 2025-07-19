@@ -20,7 +20,7 @@ export const translations = {
     grills: "Grills",
     seafood: "Seafood",
     indian: "Indian",
-    
+    pasta: "Pasta and Pizza",
     // Hero
     welcome: "Welcome to",
     heroSubtitle: "Experience the perfect fusion of Indian cuisine, grilled specialties, fresh seafood, and authentic pasta dishes in the heart of Montreal.",
@@ -71,6 +71,7 @@ export const translations = {
     grills: "Grillades",
     seafood: "Fruits de mer",
     indian: "Spécialités indiennes",
+    pasta: "Pâtes et Pizza",
     
     // Hero
     welcome: "Bienvenue chez",

@@ -16,6 +16,7 @@ interface Dish {
 interface MenuContainerProps {
   dishes: Dish[];
   title: string;
+  description?: string;
   specialDishes?: string[];
   popularDishes?: string[];
 }
@@ -23,6 +24,7 @@ interface MenuContainerProps {
 export default function MenuContainer({ 
   dishes, 
   title, 
+  description,
   specialDishes = [], 
   popularDishes = [] 
 }: MenuContainerProps) {
@@ -159,8 +161,7 @@ export default function MenuContainer({
             {title} <span className="text-[#BF9040]">Menu</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Discover our premium selection of expertly grilled dishes, 
-            crafted with the finest ingredients and traditional techniques.
+            {description || "Discover our premium selection of expertly crafted dishes, crafted with the finest ingredients and traditional techniques."}
           </p>
         </motion.div>
 

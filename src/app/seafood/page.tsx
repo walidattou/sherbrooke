@@ -59,7 +59,11 @@ export default function Seafood() {
       </section>
 
       {/* Premium Menu Section */}
-      <MenuContainer dishes={seafoodData} title="Seafood" />
+      <MenuContainer 
+        dishes={seafoodData} 
+        title="Seafood" 
+        description="Explore our fresh and flavorful seafood selection, featuring the finest catches prepared with expert culinary techniques."
+      />
     </PageWrapper>
   );
 }

@@ -62,6 +62,7 @@ export default function Indian() {
       <MenuContainer 
         dishes={indianData} 
         title="Indian Specials"
+        description="Experience authentic Indian cuisine with our carefully curated selection of traditional dishes, rich in spices and flavors."
         specialDishes={[
           "Butter Chicken",
           "Lamb Biryani",

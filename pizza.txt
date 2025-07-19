@@ -1,0 +1,71 @@
+pizzas:     sm 10"    md 12"    lg 14"    xl 16"
+Nature: sauce and cheese	7.99	10.99	12.99	14.99
+Pepperoni: sauce cheese and halal Pepperoni		10.99	14.99	16.99	17.99
+all dressed: Pepperoni, mushrooms, green peppers		11.99	14.99	17.99	19.99
+Québécoise: Pepperoni, bacon, mushrooms		11.99	14.99	17.99	19.99
+Mexican: beef, hot peppers, onions      11.99   14.99   18.99   20.99
+Vegetarian: mushrooms, green peppers, onions, green olives, kalamata olives      10.99   14.99   18.99   20.99
+Pizza Super Deluxe: Pepperoni, bacon, green peppers, mushrooms, onions      12.99   16.99   18.99   29.99
+Special Sherbrooke: Pepperoni, bacon, kofta, mushrooms, green peppers, tomato, onions, black olive      17.99      19.99      22.99      26.99
+Butter Chicken "INDIAN"      16.99      19.99      22.99      22.99
+partigiano Mediterranean: green olives, tomatoes, kalamata olives, mushrooms, partigiano cheese, feta cheese      17.99      21.99      24.99      28.99
+Meat lovers: pepperoni, bacon, ham, margueze, beef,      18.99      20.99      23.99      27.99
+
+
+Pizza-Chicken combo:
+1 pizza 10" + 1 half chicken + 1 small fries or 1 salad + 2 drinks      34.99
+1 pizza 12" + 1 whole chicken + 1 regular fries or 1 salad + 2 drinks      44.99
+
+
+pizza-fried chicken combo:
+1 pizza 10" + 2 pieces of chicken + 2 free drinks      23.99
+1 pizza 12" + 3 pieces of chicken + 2 free drinks      28.99
+1 pizza 14" + 4 pieces of chicken + 2 free drinks      39.99
+1 pizza 16" + 5 pieces of chicken + 2 free drinks      42.99
+1 pizza 10" + 10 wings + fries + 2 free drinks      30.99
+1 pizza 12" + 10 wings + fries + 2 free drinks      30.99
+1 pizza 14" + 20 wings + fries + 2 free drinks      39.99
+1 pizza 16" + 20 wings + fries + 2 free drinks      45.99
+
+Mega combo: pepperoni or all dressed or Vegetarian + 10 chicken wings or regular poutine + dessert of the day + 2L drinks
+2 small pizzas 10"      39.99
+2 medium pizzas 12"      41.99
+2 large pizzas 14"      49.99
+2 X-large pizzas 16"      51.99
+
+combos:
+2 small pizza 10": pepperoni or all dressed or Vegetarian      30.99
+2 medium pizza 12": pepperoni or all dressed or Vegetarian      35.25
+2 large pizza 14": pepperoni or all dressed or Vegetarian      42.95
+2 X-large pizza 16": pepperoni or all dressed or Vegetarian      50.95
+
+Familly Special:
+1 large pizza 14" all dressed + 2 lamb chops + 4 wings + 2 pcs fried chicken + small poutine + coleslaw + sauce + 2L drinks      55.00
+1 X-large pizza 16" all dressed + 2 lamb chops + 10 wings + large poutine + chef salad + coleslaw + sauce + 2L beverages      99.99
+
+
+
+
+
+
+Québécoise - , champignons, poivrons verts / , ,   (10", 12", 14", 16", X-gr., X-lg.)
+ - Mexicain, oignons, olives noires, ail / Mexican, onions, black olives, garlic (10", 12", 14", 16", X-gr., X-lg.)
+Champignons - Mushroom (10", 12", 14", 16", X-gr., X-lg.)
+ - Spéciale, oignons, olives vertes, kalamata / Special, , kalamata (10", 12", 14", 16", X-gr., X-lg.)
+Spéciale - Pepperoni, , champignons, poivrons verts, oignons et / Pepperoni, , , , onions and (10", 12", 14", 16", X-gr., X-lg.)
+Poulet au beurre -  (10", 12", 14", 16", X-gr., X-lg.)
+Combo Pizza-Poulet - Pizza-Chicken combo (includes 1 pizza 10" + 1 small chicken + 1 salad + 2 drinks) (23.99)
+2 petites pizzas 10" - 2 small pizzas 10" (30.99)
+2 moy. pizzas 12" - 2 medium pizzas 12" (35.25)
+2 gr. pizzas 14" - 2 large pizzas 14" (42.95)
+2 X-gr. pizzas 16" - 2 X-large pizzas 16" (50.95)
+1 gr. pizza 14" - 1 large pizza 14" (includes 4 pieces of chicken + 2L drink) (39.99)
+1 X-gr. pizza 16" - 1 X-large pizza 16" (includes 5 pieces of chicken + 2L drink) (42.99)
+A. 1 pet. pizza 10" + 2 mcx de poulet + 2 FREE drinks! - A. 1 small pizza 10" + 2 pieces of chicken + 2 FREE drinks! (23.99)
+B. 1 moy. pizza 12" + 3 mcx de poulet + 2 FREE drinks! - B. 1 medium pizza 12" + 3 pieces of chicken + 2 FREE drinks! (28.99)
+C. 1 gr. pizza 14" + 4 mcx de poulet + 2L FREE drink! - C. 1 large pizza 14" + 4 pieces of chicken + 2L FREE drink! (39.99)
+D. 1 X-gr. pizza 16" + 5 mcx de poulet + 2L FREE drink! - D. 1 X-large pizza 16" + 5 pieces of chicken + 2L FREE drink! (42.99)
+AA. 1 pet. pizza 10" + 10 ailes + fries + 2 liqueurs GRATUITES! - AA. 1 small pizza 10" + 10 wings + fries + 2 FREE drinks! (30.99)
+BB. 1 moy. pizza 12" + 10 ailes + fries + 2 liqueurs GRATUITES! - BB. 1 medium pizza 12" + 10 wings + fries + 2 FREE drinks! (30.99)
+CC. 1 gr. pizza 14" + 20 ailes + fries + 2L FREE drink! - CC. 1 large pizza 14" + 20 wings + fries + 2L FREE drink! (39.99)
+DD. 1 X-gr. pizza 16" + 20 ailes + fries + 2L FREE drink! - DD. 1 X-large pizza 16" + 20 wings + fries + 2L FREE drink! (45.99)

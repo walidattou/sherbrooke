@@ -59,7 +59,11 @@ export default function Grills() {
       </section>
 
       {/* Premium Menu Section */}
-      <MenuContainer dishes={grillsData} title="Grills" />
+      <MenuContainer 
+        dishes={grillsData} 
+        title="Grills" 
+        description="Discover our premium selection of expertly grilled dishes, crafted with the finest ingredients and traditional techniques."
+      />
     </PageWrapper>
   );
 }
