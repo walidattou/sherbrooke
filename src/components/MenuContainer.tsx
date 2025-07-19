@@ -185,7 +185,7 @@ export default function MenuContainer({
             {filteredDishes.filter(dish => isDishSpecial(dish) || isDishPopular(dish)).length > 0 && (
               <div className="mb-12">
                 <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                  <span className="text-[#BF9040]">Chef's Highlights</span>
+                  <span className="text-[#BF9040]">Chef&apos;s Highlights</span>
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {filteredDishes
@@ -280,14 +280,14 @@ export default function MenuContainer({
               <span className="text-[#BF9040]">Sherbrooke</span> Signature Specialties
             </h2>
             <p className="text-gray-300 mb-6">
-              Experience our chef's most celebrated creations, featuring premium ingredients 
+              Experience our chef&apos;s most celebrated creations, featuring premium ingredients 
               and time-honored cooking techniques.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {dishes
                 .filter(dish => isDishSpecial(dish))
                 .slice(0, 3)
-                .map((dish, index) => (
+                .map((dish) => (
                   <div key={dish.id} className="p-4 bg-gray-800/50 rounded-lg border border-[#BF9040]/30">
                     <h4 className="font-semibold text-[#BF9040] mb-2">{dish.name}</h4>
                     <p className="text-sm text-gray-300 mb-2">{dish.description}</p>

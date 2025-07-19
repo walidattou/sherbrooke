@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const LanguageContext = createContext();
 
@@ -119,14 +119,28 @@ export const translations = {
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState("en");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // Get initial language from localStorage or default to "en"
+    const savedLanguage = localStorage.getItem("language") || "en";
+    setLanguage(savedLanguage);
+    setMounted(true);
+  }, []);
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === "en" ? "fr" : "en");
+    const newLang = language === "en" ? "fr" : "en";
+    setLanguage(newLang);
+    localStorage.setItem("language", newLang);
   };
 
   const t = (key) => {
     return translations[language][key] || key;
   };
+
+  if (!mounted) {
+    return null; // or a loading spinner
+  }
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t }}>

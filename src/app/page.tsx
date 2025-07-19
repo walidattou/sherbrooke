@@ -76,7 +76,7 @@ export default function Home() {
             Indian <span className="text-[#BF9040]">Fire</span> Meets Modern <span className="text-[#BF9040]">Flavor</span>
           </h1>
           <p className="max-w-3xl mx-auto mt-6 text-base sm:text-lg md:text-xl text-white/80">
-            Experience the fusion of traditional Indian spices with contemporary culinary artistry in Montreal's heart.
+            Experience the fusion of traditional Indian spices with contemporary culinary artistry in Montreal&apos;s heart.
           </p>
           
           <motion.div

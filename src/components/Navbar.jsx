@@ -46,13 +46,18 @@ export default function Navbar() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image
-              src="/Logo.svg"
-              alt="Sherbrooke Grill & Pizza Logo"
-              width={120}
-              height={60}
-              className="h-12 w-auto object-contain"
-            />
+            <div className={`p-1 rounded-md ${isScrolled
+              ? 'bg-white/90'
+              : 'bg-white/80'
+              } transition-all duration-300`}>
+              <Image
+                src="/Logo.svg"
+                alt="Sherbrooke Grill & Pizza Logo"
+                width={120}
+                height={60}
+                className="h-12 w-auto object-contain"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -72,14 +77,14 @@ export default function Navbar() {
             {/* Language Toggle & Delivery Buttons */}
             <div className="flex items-center space-x-3 ml-4">
               {/* Language Toggle Button */}
-              <motion.button
+              {/* <motion.button
                 onClick={toggleLanguage}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-gray-100 text-gray-700 px-3 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-gray-200 flex items-center space-x-2">
                 <Globe size={16} />
                 <span className="text-sm">{language === "en" ? "FR" : "EN"}</span>
-              </motion.button>
+              </motion.button> */}
 
               {/* Uber Eats Button */}
               <motion.a
