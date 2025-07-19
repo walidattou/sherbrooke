@@ -4,20 +4,23 @@ import PageWrapper from "@/components/PageWrapper";
 import MenuContainer from "@/components/MenuContainer";
 import { pastaData } from "@/data/pasta";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Pasta() {
   return (
     <PageWrapper>
       {/* Hero Section */}
       <section className="relative">
-        <div className="relative overflow-hidden h-[500px] flex items-center justify-center bg-gradient-to-br from-amber-600 via-orange-600 to-red-600">
-          {/* Decorative background pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="7" cy="7" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]" />
-          </div>
-          
-          {/* Enhanced gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
+        <div className="relative overflow-hidden h-[500px] flex items-center justify-center">
+          <Image
+            src="/PastaPage.png"
+            alt="Pasta"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Enhanced gradient overlay for better contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20"></div>
           
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -25,14 +28,6 @@ export default function Pasta() {
             transition={{ duration: 1 }}
             className="relative z-10 text-center px-6"
           >
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-8xl md:text-9xl mb-6"
-            >
-              🍝
-            </motion.div>
             <h1 className="text-6xl md:text-7xl font-extrabold mb-6 text-white tracking-wide">
               Pasta
             </h1>

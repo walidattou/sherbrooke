@@ -17,6 +17,7 @@ export default function Navbar() {
     { name: t("grills"), href: "/grills" },
     { name: t("seafood"), href: "/seafood" },
     { name: t("indian"), href: "/indian" },
+    { name: t("pasta"), href: "/pasta" },
   ];
 
   return (
