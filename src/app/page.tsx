@@ -1,138 +1,125 @@
 "use client";
 
+import { useRef } from 'react';
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ExternalLink, ArrowRight, Flame } from "lucide-react";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ExternalLink, ArrowRight, Flame, ChevronDown } from "lucide-react";
 
 export default function Home() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
+
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0]);
+
   const categories = [
     {
       title: "Grills",
       href: "/grills",
-      image: "🔥",
+      imagePath: "/images/categories/Grills.png",
       bgColor: "from-red-500 to-orange-600",
     },
     {
       title: "Pasta",
       href: "/pasta",
-      image: "🍝",
+      imagePath: "/images/categories/Pasta.png",
       bgColor: "from-yellow-500 to-orange-500",
     },
     {
       title: "Seafood",
       href: "/seafood",
-      image: "🦐",
+      imagePath: "/images/categories/Seafood.jpg",
       bgColor: "from-blue-500 to-teal-600",
     },
     {
       title: "Indian Specials",
       href: "/indian",
-      image: "🍛",
+      imagePath: "/images/categories/Indian Specials food.png",
       bgColor: "from-purple-500 to-pink-600",
     },
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Split Layout */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+      {/* Hero Section with Scroll Effects */}
+      <motion.section 
+        ref={heroRef} 
+        style={{ opacity: heroOpacity }} 
+        className="w-full h-screen sticky top-0 flex flex-col justify-center items-center text-center overflow-hidden"
+      >
+        <motion.div 
+          style={{ scale: videoScale }} 
+          className="absolute inset-0 z-0 w-full h-full"
+        >
+          <video 
+            className="w-full h-full object-cover" 
+            src="https://videos.pexels.com/video-files/2894881/2894881-uhd_2560_1440_24fps.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+          />
+          <div className="absolute inset-0 bg-black/60 w-full h-full"/>
+        </motion.div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 1, delay: 0.5 }} 
+          className="relative z-10 px-4 w-full max-w-6xl mx-auto"
+        >
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter">
+            Indian <span className="text-[#BF9040]">Fire</span> Meets Modern <span className="text-[#BF9040]">Flavor</span>
+          </h1>
+          <p className="max-w-3xl mx-auto mt-6 text-base sm:text-lg md:text-xl text-white/80">
+            Experience the fusion of traditional Indian spices with contemporary culinary artistry in Montreal's heart.
+          </p>
+          
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-white z-10">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Indian <span className="text-[#BF9040]">Fire</span>
-              <br />
-              Meets Modern
-              <br />
-              <span className="text-[#BF9040]">Flavor</span>
-            </motion.h1>
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#BF9040] hover:bg-[#A67A35] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 group">
+              Order on Uber Eats
+              <ExternalLink
+                size={20}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </motion.button>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl mb-8 text-gray-300 max-w-lg">
-              Experience the fusion of traditional Indian spices with
-              contemporary culinary artistry in Montreal&apos;s heart.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#BF9040] hover:bg-[#A67A35] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 group">
-                Order on Uber Eats
-                <ExternalLink
-                  size={20}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-[#BF9040] text-[#BF9040] hover:bg-[#BF9040] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 group">
-                Order on DoorDash
-                <ExternalLink
-                  size={20}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </motion.button>
-            </motion.div>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-transparent border-2 border-[#BF9040] text-[#BF9040] hover:bg-[#BF9040] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 group">
+              Order on DoorDash
+              <ExternalLink
+                size={20}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </motion.button>
           </motion.div>
-
-          {/* Right Content - Floating Animation */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative flex items-center justify-center">
-            <motion.div
-              animate={{
-                y: [0, -20, 0],
-                rotate: [0, 5, -5, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="text-8xl md:text-9xl opacity-80">
-              🍽️
-            </motion.div>
-
-            <motion.div
-              animate={{
-                scale: [1, 1.1, 1],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute inset-0 bg-[#BF9040] rounded-full blur-3xl"
-            />
-          </motion.div>
-        </div>
-      </section>
+        </motion.div>
+        
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 1, delay: 1.5 }} 
+          className="absolute bottom-10 z-10"
+        >
+          <ChevronDown className="w-8 h-8 text-white animate-bounce" />
+        </motion.div>
+      </motion.section>
 
       {/* Flavors That Tell a Story */}
-      <section className="py-32 bg-gradient-to-br from-white via-gray-50 to-gray-100 relative overflow-hidden">
+      <section className="py-32 bg-gradient-to-br from-white via-gray-50 to-gray-100 relative overflow-hidden z-20">
         <div className="absolute inset-0 bg-gradient-to-r from-[#BF9040]/5 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,59 +131,22 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="relative">
               <div className="relative">
-                {/* Main image placeholder with artistic overlay */}
-                <div className="aspect-square bg-gradient-to-br from-[#BF9040]/20 to-orange-600/30 rounded-2xl overflow-hidden relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.05, 1],
-                        rotate: [0, 2, -2, 0],
-                      }}
-                      transition={{
-                        duration: 6,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                      className="text-8xl opacity-60">
-                      🌶️
-                    </motion.div>
-                  </div>
-
-                  {/* Floating spice elements */}
-                  <motion.div
-                    animate={{
-                      y: [0, -10, 0],
-                      opacity: [0.3, 0.7, 0.3],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 0.5,
-                    }}
-                    className="absolute top-8 right-8 text-4xl">
-                    🍃
-                  </motion.div>
-
-                  <motion.div
-                    animate={{
-                      y: [0, -15, 0],
-                      opacity: [0.4, 0.8, 0.4],
-                    }}
-                    transition={{
-                      duration: 5,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 1,
-                    }}
-                    className="absolute bottom-12 left-8 text-3xl">
-                    ✨
-                  </motion.div>
+                {/* Main image with artistic overlay */}
+                <div className="aspect-square rounded-2xl overflow-hidden relative">
+                  <Image
+                    src="/Flavors That Tell a Story.png"
+                    alt="Indian Spices and Dishes"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#BF9040]/30 to-orange-600/40 mix-blend-overlay"></div>
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#BF9040]/10 rounded-full blur-xl"></div>
+                  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-400/10 rounded-full blur-xl"></div>
                 </div>
-
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#BF9040]/10 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-orange-400/10 rounded-full blur-xl"></div>
               </div>
             </motion.div>
 
@@ -289,7 +239,7 @@ export default function Home() {
       </section>
 
       {/* Our Story Block */}
-      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
+      <section className="py-20 bg-gray-900 text-white relative overflow-hidden z-20">
         <div className="absolute inset-0 bg-black opacity-10"></div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -333,7 +283,7 @@ export default function Home() {
       </section>
 
       {/* Explore Menu Grid */}
-      <section id="menu" className="py-20 bg-white">
+      <section id="menu" className="py-20 bg-white relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -360,15 +310,16 @@ export default function Home() {
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${category.bgColor} opacity-90 group-hover:opacity-100 transition-opacity duration-300`}
                   />
-
+                  <Image
+                    src={category.imagePath}
+                    alt={category.title}
+                    fill
+                    className="object-cover"
+                  />
                   <div className="relative h-full flex flex-col items-center justify-center text-white p-8">
-                    <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                      {category.image}
-                    </div>
                     <h3 className="text-3xl font-bold mb-4">
                       {category.title}
                     </h3>
-
                     <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                       <span className="bg-white text-gray-900 px-6 py-2 rounded-full font-semibold">
                         See Menu
@@ -383,7 +334,7 @@ export default function Home() {
       </section>
 
       {/* Order Now Banner */}
-      <section className="py-16 bg-gradient-to-r from-[#BF9040] to-[#A67A35] text-white">
+      <section className="py-16 bg-gradient-to-r from-[#BF9040] to-[#A67A35] text-white relative z-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

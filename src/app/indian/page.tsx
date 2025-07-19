@@ -5,6 +5,7 @@ import DishTable from "@/components/DishTable";
 import { indianData } from "@/data/indian";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 export default function Indian() {
   const { t } = useLanguage();
@@ -18,13 +19,25 @@ export default function Indian() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-12">
-            <div className="bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg p-16 mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                🍛 {t("indianTitle")}
-              </h1>
-              <p className="text-xl text-purple-100 max-w-2xl mx-auto">
-                {t("indianDescription")}
-              </p>
+            <div className="rounded-lg relative overflow-hidden h-[400px] flex items-center justify-center">
+              <Image
+                src="/IndianSpecialsPage.png"
+                alt="Indian Cuisine"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Dark gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+              
+              <div className="relative z-10 px-6">
+                <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-white tracking-wide">
+                  {t("indianTitle")}
+                </h1>
+                <p className="text-2xl text-white/90 max-w-2xl mx-auto font-medium leading-relaxed">
+                  {t("indianDescription")}
+                </p>
+              </div>
             </div>
           </motion.div>
 

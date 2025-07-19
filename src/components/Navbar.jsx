@@ -26,7 +26,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/WhatsApp Image 2025-07-15 at 19.30.17_bea333ee.jpg"
+              src="/Logo.svg"
               alt="Sherbrooke Grill & Pizza Logo"
               width={120}
               height={60}

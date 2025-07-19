@@ -3,6 +3,7 @@
 import PageWrapper from "@/components/PageWrapper";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 export default function About() {
   const { t } = useLanguage();
@@ -29,8 +30,14 @@ export default function About() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}>
-              <div className="bg-gray-200 rounded-lg h-80 flex items-center justify-center">
-                <span className="text-6xl">🍽️</span>
+              <div className="relative bg-gray-200 rounded-lg h-80 overflow-hidden">
+                <Image
+                  src="/About.png"
+                  alt="About Us"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </motion.div>
 

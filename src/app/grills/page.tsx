@@ -5,6 +5,7 @@ import DishTable from "@/components/DishTable";
 import { grillsData } from "@/data/grills";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 export default function Grills() {
   const { t } = useLanguage();
@@ -18,13 +19,25 @@ export default function Grills() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-12">
-            <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-lg p-16 mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                🔥 {t("grillsTitle")}
-              </h1>
-              <p className="text-xl text-orange-100 max-w-2xl mx-auto">
-                {t("grillsDescription")}
-              </p>
+            <div className="rounded-lg relative overflow-hidden h-[400px] flex items-center justify-center">
+              <Image
+                src="/GrillsPage.png"
+                alt="Grills"
+                fill
+                className="object-cover"
+                priority
+              />
+              {/* Dark gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+              
+              <div className="relative z-10 px-6">
+                <h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-white tracking-wide">
+                  {t("grillsTitle")}
+                </h1>
+                <p className="text-2xl text-white/90 max-w-2xl mx-auto font-medium leading-relaxed">
+                  {t("grillsDescription")}
+                </p>
+              </div>
             </div>
           </motion.div>
 
