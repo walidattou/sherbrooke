@@ -6,10 +6,29 @@ import DishCard from "./DishCard";
 import FilterBar from "./FilterBar";
 import LoadingSpinner from "./LoadingSpinner";
 
-export default function MenuContainer({ dishes, title }) {
+interface Dish {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+}
+
+interface MenuContainerProps {
+  dishes: Dish[];
+  title: string;
+  specialDishes?: string[];
+  popularDishes?: string[];
+}
+
+export default function MenuContainer({ 
+  dishes, 
+  title, 
+  specialDishes = [], 
+  popularDishes = [] 
+}: MenuContainerProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [priceRange, setPriceRange] = useState([0, 70]);
-  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [displayCount, setDisplayCount] = useState(30); // Start with 30 items
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,8 +38,8 @@ export default function MenuContainer({ dishes, title }) {
     return () => clearTimeout(timer);
   }, []);
 
-  // Define special and popular dishes
-  const specialDishes = [
+  // Default special and popular dishes if not provided
+  const defaultSpecialDishes = [
     "Sherbrooke Special",
     "Amira Special", 
     "Mixed Grill Deluxe",
@@ -31,7 +50,7 @@ export default function MenuContainer({ dishes, title }) {
     "Sherbrooke #4"
   ];
 
-  const popularDishes = [
+  const defaultPopularDishes = [
     "Mixed Grill Platter",
     "Whole Chicken",
     "Lamb Chops (4 pcs)",
@@ -43,12 +62,16 @@ export default function MenuContainer({ dishes, title }) {
     "Filet Mignon Skewer"
   ];
 
+  // Use provided arrays or defaults
+  const finalSpecialDishes = specialDishes.length > 0 ? specialDishes : defaultSpecialDishes;
+  const finalPopularDishes = popularDishes.length > 0 ? popularDishes : defaultPopularDishes;
+
   // Filter dishes based on current filters
   const filteredDishes = useMemo(() => {
     return dishes.filter(dish => {
       // Price filter
       const price = parseFloat(dish.price.replace('$', ''));
-      if (price < priceRange[0] || price > priceRange[1]) return false;
+      if (price < priceRange[0] || (priceRange[1] < 70 && price > priceRange[1])) return false;
 
       // Search filter
       if (searchTerm) {
@@ -68,9 +91,9 @@ export default function MenuContainer({ dishes, title }) {
         const matchesTags = selectedTags.some(tag => {
           switch (tag) {
             case 'popular':
-              return popularDishes.some(popular => dish.name.includes(popular));
+              return finalPopularDishes.some(popular => dish.name.includes(popular));
             case 'special':
-              return specialDishes.some(special => dish.name.includes(special));
+              return finalSpecialDishes.some(special => dish.name.includes(special));
             case 'premium':
               return price > 30;
             case 'chicken':
@@ -97,25 +120,25 @@ export default function MenuContainer({ dishes, title }) {
 
       return true;
     });
-  }, [dishes, searchTerm, priceRange, selectedTags]);
+  }, [dishes, searchTerm, priceRange, selectedTags, finalSpecialDishes, finalPopularDishes]);
 
   // Callbacks for filter updates
-  const handleSearch = useCallback((term) => {
+  const handleSearch = useCallback((term: string) => {
     setSearchTerm(term);
     setDisplayCount(30); // Reset to show first batch when filtering
   }, []);
-  const handlePriceFilter = useCallback((range) => {
+  const handlePriceFilter = useCallback((range: number[]) => {
     setPriceRange(range);
     setDisplayCount(30);
   }, []);
-  const handleTagFilter = useCallback((tags) => {
+  const handleTagFilter = useCallback((tags: string[]) => {
     setSelectedTags(tags);
     setDisplayCount(30);
   }, []);
 
   // Check if dish is special or popular
-  const isDishSpecial = (dish) => specialDishes.some(special => dish.name.includes(special));
-  const isDishPopular = (dish) => popularDishes.some(popular => dish.name.includes(popular));
+  const isDishSpecial = useCallback((dish: Dish) => finalSpecialDishes.some(special => dish.name.includes(special)), [finalSpecialDishes]);
+  const isDishPopular = useCallback((dish: Dish) => finalPopularDishes.some(popular => dish.name.includes(popular)), [finalPopularDishes]);
 
   // Show loading spinner initially
   if (isLoading) {
@@ -162,7 +185,7 @@ export default function MenuContainer({ dishes, title }) {
             {filteredDishes.filter(dish => isDishSpecial(dish) || isDishPopular(dish)).length > 0 && (
               <div className="mb-12">
                 <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                  ✨ <span className="text-[#BF9040]">Chef's Highlights</span>
+                  <span className="text-[#BF9040]">Chef's Highlights</span>
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {filteredDishes
@@ -254,7 +277,7 @@ export default function MenuContainer({ dishes, title }) {
             className="mt-16 p-8 bg-gradient-to-r from-[#BF9040]/10 to-transparent rounded-xl border border-[#BF9040]/20"
           >
             <h2 className="text-2xl font-bold text-white mb-4">
-              ✨ <span className="text-[#BF9040]">Sherbrooke</span> Signature Specialties
+              <span className="text-[#BF9040]">Sherbrooke</span> Signature Specialties
             </h2>
             <p className="text-gray-300 mb-6">
               Experience our chef's most celebrated creations, featuring premium ingredients 

@@ -17,13 +17,13 @@ export default function FilterBar({
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const tags = [
-    { id: "popular", label: "🔥 Popular", color: "bg-red-500" },
-    { id: "special", label: "✨ Special", color: "bg-[#BF9040]" },
-    { id: "premium", label: "👑 Premium", color: "bg-purple-500" },
-    { id: "chicken", label: "🐔 Chicken", color: "bg-orange-500" },
-    { id: "lamb", label: "🐑 Lamb", color: "bg-amber-600" },
-    { id: "seafood", label: "🐟 Seafood", color: "bg-blue-500" },
-    { id: "vegetarian", label: "🥬 Vegetarian", color: "bg-green-500" }
+    { id: "popular", label: "Popular", color: "bg-red-500" },
+    { id: "special", label: "Special", color: "bg-[#BF9040]" },
+    { id: "premium", label: "Premium", color: "bg-purple-600" },
+    { id: "chicken", label: "Chicken", color: "bg-orange-500" },
+    { id: "lamb", label: "Lamb", color: "bg-amber-600" },
+    { id: "seafood", label: "Seafood", color: "bg-blue-500" },
+    { id: "vegetarian", label: "Vegetarian", color: "bg-green-500" }
   ];
 
   // Debounced search effect

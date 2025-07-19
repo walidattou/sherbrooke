@@ -40,12 +40,12 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
           <div className="absolute top-4 right-4 z-10">
             {isSpecial && (
               <span className="px-3 py-2 bg-gradient-to-r from-[#BF9040] to-[#D4A853] text-black text-sm font-bold rounded-full uppercase tracking-wide">
-                ✨ Chef's Special
+                Chef's Special
               </span>
             )}
             {isPopular && !isSpecial && (
               <span className="px-3 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-bold rounded-full uppercase tracking-wide">
-                🔥 Most Popular
+                Most Popular
               </span>
             )}
           </div>
@@ -95,9 +95,9 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
           {/* Badges */}
           {(isSpecial || isPopular || isPremium) && (
             <div className="flex gap-1 mb-3">
-              {isSpecial && <span className="px-2 py-1 bg-[#BF9040] text-black text-xs font-bold rounded">✨</span>}
-              {isPopular && <span className="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">🔥</span>}
-              {isPremium && !isSpecial && <span className="px-2 py-1 bg-purple-600 text-white text-xs font-bold rounded">👑</span>}
+              {isSpecial && <span className="px-2 py-1 bg-[#BF9040] text-black text-xs font-bold rounded">Special</span>}
+              {isPopular && <span className="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded">Popular</span>}
+              {isPremium && !isSpecial && <span className="px-2 py-1 bg-purple-600 text-white text-xs font-bold rounded">Premium</span>}
             </div>
           )}
 
@@ -161,17 +161,17 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
                 <div className="flex gap-2">
                   {isSpecial && (
                     <span className="px-2 py-1 bg-[#BF9040] text-black text-xs font-bold rounded-md uppercase tracking-wide">
-                      ✨ Special
+                      Special
                     </span>
                   )}
                   {isPopular && (
                     <span className="px-2 py-1 bg-red-500 text-white text-xs font-bold rounded-md uppercase tracking-wide">
-                      🔥 Popular
+                      Popular
                     </span>
                   )}
                   {isPremium && !isSpecial && (
                     <span className="px-2 py-1 bg-purple-600 text-white text-xs font-bold rounded-md uppercase tracking-wide">
-                      👑 Premium
+                      Premium
                     </span>
                   )}
                 </div>
@@ -211,11 +211,11 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
               </span>
               
               <span className="text-gray-400">
-                {dish.name.toLowerCase().includes('chicken') && '🐔 Chicken'} 
-                {dish.name.toLowerCase().includes('lamb') && '🐑 Lamb'}
-                {dish.name.toLowerCase().includes('beef') && '🥩 Beef'}
-                {(dish.name.toLowerCase().includes('fish') || dish.name.toLowerCase().includes('salmon') || dish.name.toLowerCase().includes('shrimp')) && '🐟 Seafood'}
-                {dish.name.toLowerCase().includes('vegetable') && '🥬 Vegetarian'}
+              {dish.name.toLowerCase().includes('chicken') && 'Chicken'}
+              {dish.name.toLowerCase().includes('lamb') && 'Lamb'}
+              {dish.name.toLowerCase().includes('beef') && 'Beef'}
+              {(dish.name.toLowerCase().includes('fish') || dish.name.toLowerCase().includes('salmon') || dish.name.toLowerCase().includes('shrimp')) && 'Seafood'}
+              {dish.name.toLowerCase().includes('vegetable') && 'Vegetarian'}
               </span>
             </div>
         </div>

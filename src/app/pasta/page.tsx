@@ -56,7 +56,19 @@ export default function Pasta() {
       </section>
 
       {/* Premium Menu Section */}
-      <MenuContainer dishes={pastaData} title="Pasta" />
+      <MenuContainer 
+        dishes={pastaData} 
+        title="Pasta"
+        specialDishes={[
+          "Seafood Masala Pasta",
+          "Lamb Keema Pasta"
+        ]}
+        popularDishes={[
+          "Chicken Tikka Pasta",
+          "Butter Chicken Pasta",
+          "Paneer Makhani Pasta"
+        ]}
+      />
     </PageWrapper>
   );
 }

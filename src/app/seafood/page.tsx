@@ -15,16 +15,16 @@ export default function Seafood() {
       {/* Hero Section */}
       <section className="relative">
         <div className="relative overflow-hidden h-[500px] flex items-center justify-center">
-          <Image
-            src="/SeafoodPage.png"
-            alt="Seafood"
-            fill
-            className="object-cover"
-            priority
-          />
+              <Image
+                src="/SeafoodPage.png"
+                alt="Seafood"
+                fill
+                className="object-cover"
+                priority
+              />
           {/* Enhanced gradient overlay for better contrast */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20"></div>
-          
+              
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -32,11 +32,11 @@ export default function Seafood() {
             className="relative z-10 text-center px-6"
           >
             <h1 className="text-6xl md:text-7xl font-extrabold mb-6 text-white tracking-wide">
-              {t("seafoodTitle")}
-            </h1>
+                  {t("seafoodTitle")}
+                </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-medium leading-relaxed">
-              {t("seafoodDescription")}
-            </p>
+                  {t("seafoodDescription")}
+                </p>
             
             {/* Scroll indicator */}
             <motion.div
@@ -53,7 +53,7 @@ export default function Seafood() {
                 />
               </div>
               <p className="text-white/70 text-sm mt-2">Scroll to explore menu</p>
-            </motion.div>
+          </motion.div>
           </motion.div>
         </div>
       </section>

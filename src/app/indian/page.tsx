@@ -59,7 +59,23 @@ export default function Indian() {
       </section>
 
       {/* Premium Menu Section */}
-      <MenuContainer dishes={indianData} title="Indian Specials" />
+      <MenuContainer 
+        dishes={indianData} 
+        title="Indian Specials"
+        specialDishes={[
+          "Butter Chicken",
+          "Lamb Biryani",
+          "Rogan Josh",
+          "Chicken Tikka Masala"
+        ] as string[]}
+        popularDishes={[
+          "Paneer Makhani",
+          "Dal Makhani",
+          "Chicken Vindaloo",
+          "Saag Paneer",
+          "Appetizer Platter for 2"
+        ] as string[]}
+      />
     </PageWrapper>
   );
 }
