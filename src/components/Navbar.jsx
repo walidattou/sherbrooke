@@ -46,12 +46,12 @@ export default function Navbar() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className={`p-1 rounded-md ${isScrolled
-              ? 'bg-white/90'
-              : 'bg-white/80'
-              } transition-all duration-300`}>
+            <div className={`p-2 rounded-lg ${isScrolled
+              ? 'bg-white/95'
+              : 'bg-white/90'
+              } transition-all duration-300 shadow-lg`}>
               <Image
-                src="/Logo.svg"
+                src="/Logo.jpg"
                 alt="Sherbrooke Grill & Pizza Logo"
                 width={120}
                 height={60}
@@ -109,8 +109,10 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-3 rounded-lg shadow-lg transition-all duration-200">
+            {isOpen ? <X size={24} className="text-white" /> : <Menu size={24} className="text-white" />}
           </button>
         </div>
 
@@ -120,23 +122,21 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className={`md:hidden py-4 border-t ${isScrolled ? 'border-gray-700' : 'border-white/20'
-              }`}>
+            className="md:hidden py-6 mx-4 mt-4 bg-gray-900/95 backdrop-blur-md shadow-lg rounded-2xl">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-white hover:text-[#BF9040] transition-colors duration-200"
+                className="block py-3 px-6 text-gray-100 hover:text-[#BF9040] hover:bg-gray-800/50 transition-all duration-200 font-medium"
                 onClick={() => setIsOpen(false)}>
                 {item.name}
               </Link>
             ))}
             
             {/* Mobile Language Toggle & Delivery Buttons */}
-            <div className={`flex flex-col space-y-3 mt-4 pt-4 border-t ${isScrolled ? 'border-gray-700' : 'border-white/20'
-              }`}>
+            <div className="flex flex-col items-center space-y-3 mt-6 pt-6 border-t border-gray-700">
               {/* Language Toggle Button Mobile */}
-              <motion.button
+              {/* <motion.button
                 onClick={() => {
                   toggleLanguage();
                   setIsOpen(false);
@@ -146,14 +146,14 @@ export default function Navbar() {
                 className="bg-gray-100 text-gray-700 px-4 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 hover:bg-gray-200">
                 <Globe size={18} />
                 <span>{language === "en" ? "Français" : "English"}</span>
-              </motion.button>
+              </motion.button> */}
 
               {/* Uber Eats Button Mobile */}
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-black text-white px-4 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-gray-800"
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-gray-800 w-48"
                 onClick={() => setIsOpen(false)}>
                 <span>{t("orderUberEats")}</span>
               </motion.a>
@@ -165,7 +165,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-red-600 text-white px-4 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-red-700"
+                className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-red-700 w-48"
                 onClick={() => setIsOpen(false)}>
                 <span>{t("orderDoorDash")}</span>
               </motion.a>
