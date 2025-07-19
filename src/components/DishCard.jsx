@@ -21,8 +21,8 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ 
-          duration: 0.8, 
-          delay: index * 0.2,
+          duration: 0.6,
+          delay: Math.min(index * 0.1, 0.4),
           ease: [0.25, 0.46, 0.45, 0.94]
         }}
         whileHover={{ scale: 1.02, y: -5 }}
@@ -83,8 +83,8 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ 
-          duration: 0.5, 
-          delay: index * 0.05,
+          duration: 0.3,
+          delay: Math.min(index * 0.01, 0.3),
         }}
         whileHover={{ y: -3 }}
         onHoverStart={() => setIsHovered(true)}
@@ -133,8 +133,8 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
       initial={{ opacity: 0, x: -30 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ 
-        duration: 0.6, 
-        delay: index * 0.08,
+        duration: 0.4,
+        delay: Math.min(index * 0.02, 0.5),
         ease: [0.25, 0.46, 0.45, 0.94]
       }}
       whileHover={{ x: 8 }}

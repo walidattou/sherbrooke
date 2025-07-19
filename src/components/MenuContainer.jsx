@@ -1,14 +1,23 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import DishCard from "./DishCard";
 import FilterBar from "./FilterBar";
+import LoadingSpinner from "./LoadingSpinner";
 
 export default function MenuContainer({ dishes, title }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [priceRange, setPriceRange] = useState([0, 70]);
   const [selectedTags, setSelectedTags] = useState([]);
+  const [displayCount, setDisplayCount] = useState(30); // Start with 30 items
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Show loading for a brief moment to improve perceived performance
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Define special and popular dishes
   const specialDishes = [
@@ -91,13 +100,27 @@ export default function MenuContainer({ dishes, title }) {
   }, [dishes, searchTerm, priceRange, selectedTags]);
 
   // Callbacks for filter updates
-  const handleSearch = useCallback((term) => setSearchTerm(term), []);
-  const handlePriceFilter = useCallback((range) => setPriceRange(range), []);
-  const handleTagFilter = useCallback((tags) => setSelectedTags(tags), []);
+  const handleSearch = useCallback((term) => {
+    setSearchTerm(term);
+    setDisplayCount(30); // Reset to show first batch when filtering
+  }, []);
+  const handlePriceFilter = useCallback((range) => {
+    setPriceRange(range);
+    setDisplayCount(30);
+  }, []);
+  const handleTagFilter = useCallback((tags) => {
+    setSelectedTags(tags);
+    setDisplayCount(30);
+  }, []);
 
   // Check if dish is special or popular
   const isDishSpecial = (dish) => specialDishes.some(special => dish.name.includes(special));
   const isDishPopular = (dish) => popularDishes.some(popular => dish.name.includes(popular));
+
+  // Show loading spinner initially
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
@@ -167,7 +190,7 @@ export default function MenuContainer({ dishes, title }) {
               
               {/* Group dishes by sections for better visual flow */}
               <div className="columns-1 md:columns-2 xl:columns-3 gap-6 space-y-6">
-                {filteredDishes.map((dish, index) => (
+                {filteredDishes.slice(0, displayCount).map((dish, index) => (
                   <div key={dish.id} className="break-inside-avoid mb-6">
                     <DishCard
                       dish={dish}
@@ -179,6 +202,20 @@ export default function MenuContainer({ dishes, title }) {
                   </div>
                 ))}
               </div>
+
+              {/* Load More Button */}
+              {filteredDishes.length > displayCount && (
+                <div className="text-center mt-12">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setDisplayCount(prev => prev + 30)}
+                    className="px-8 py-4 bg-[#BF9040] hover:bg-[#D4A853] text-black font-bold rounded-xl transition-all duration-200 shadow-lg"
+                  >
+                    Load More Dishes ({filteredDishes.length - displayCount} remaining)
+                  </motion.button>
+                </div>
+              )}
             </div>
           </motion.div>
         ) : (
