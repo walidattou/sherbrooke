@@ -4,12 +4,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X, Globe } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: t("home"), href: "/" },
@@ -21,7 +33,15 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-[#f5f5f0] shadow-sm sticky top-0 z-50">
+    <motion.nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-gray-900/95 backdrop-blur-md shadow-lg'
+        : 'bg-transparent'
+        }`}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -41,7 +61,10 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-[#BF9040] transition-colors duration-200 font-medium">
+                className={`transition-colors duration-200 font-medium ${isScrolled
+                  ? 'text-white hover:text-[#BF9040]'
+                  : 'text-white hover:text-[#BF9040]'
+                  }`}>
                 {item.name}
               </Link>
             ))}
@@ -69,7 +92,9 @@ export default function Navbar() {
 
               {/* DoorDash Button */}
               <motion.a
-                href="#"
+                href="https://wa.me/15144344466"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-red-700">
@@ -90,19 +115,21 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden py-4 border-t border-gray-200">
+            className={`md:hidden py-4 border-t ${isScrolled ? 'border-gray-700' : 'border-white/20'
+              }`}>
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-gray-700 hover:text-[#BF9040] transition-colors duration-200"
+                className="block py-2 text-white hover:text-[#BF9040] transition-colors duration-200"
                 onClick={() => setIsOpen(false)}>
                 {item.name}
               </Link>
             ))}
             
             {/* Mobile Language Toggle & Delivery Buttons */}
-            <div className="flex flex-col space-y-3 mt-4 pt-4 border-t border-gray-200">
+            <div className={`flex flex-col space-y-3 mt-4 pt-4 border-t ${isScrolled ? 'border-gray-700' : 'border-white/20'
+              }`}>
               {/* Language Toggle Button Mobile */}
               <motion.button
                 onClick={() => {
@@ -128,7 +155,9 @@ export default function Navbar() {
 
               {/* DoorDash Button Mobile */}
               <motion.a
-                href="#"
+                href="https://wa.me/15144344466"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="bg-red-600 text-white px-4 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-red-700"
@@ -139,6 +168,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </div>
-    </nav>
+    </motion.nav>
   );
 }
