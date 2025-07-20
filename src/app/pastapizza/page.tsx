@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import DishCard from "@/components/DishCard";
 import FilterBar from "@/components/FilterBar";
+import CarouselHighlights from "@/components/CarouselHighlights";
 
 interface PastaDish {
   id: number;
@@ -226,6 +227,71 @@ export default function PastaPizza() {
             totalItems={allDishes.length}
             filteredItems={filteredDishes.length}
           />
+
+          {/* Chef's Highlights Carousel */}
+          {(() => {
+            const highlights = [
+              {
+                title: "Chicken Greek Pasta",
+                desc: "Greek-style pasta with chicken, mushrooms, sun-dried tomatoes, Kalamata olives, feta and arugula",
+                price: "$15.99",
+                image: "/categories_im/pasta.png"
+              },
+              {
+                title: "Special Sherbrooke Pizza",
+                desc: "Pepperoni, bacon, kofta, mushrooms, green peppers, tomato, onions, black olive",
+                price: "$19.99",
+                image: "/categories_im/pizza.png"
+              },
+              {
+                title: "Beef Greek Pasta",
+                desc: "Greek-style pasta with beef, mushrooms, sun-dried tomatoes, Kalamata olives, feta and arugula",
+                price: "$15.99",
+                image: "/categories_im/pasta.png"
+              },
+              {
+                title: "Butter Chicken 'INDIAN' Pizza",
+                desc: "Butter chicken sauce, chicken, cheese",
+                price: "$19.99",
+                image: "/categories_im/pizza.png"
+              }
+            ];
+            
+            // Carousel for first 2
+            const carouselItems = highlights.slice(0, 2);
+            // Static cards for additional highlights
+            const staticItems = highlights.slice(2);
+            
+            return (
+              <>
+                {carouselItems.length > 0 && (
+                  <CarouselHighlights 
+                    sectionTitle="Pasta & Pizza Chef's Highlights" 
+                    highlights={carouselItems} 
+                  />
+                )}
+                {staticItems.length > 0 && (
+                  <div className="mb-12">
+                    <h2 className="text-2xl font-bold text-white mb-6 text-center">
+                      <span className="text-[#BF9040]">Additional</span> Highlights
+                    </h2>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      {staticItems.map((item, idx) => (
+                        <DishCard
+                          key={`static-highlight-${item.title}`}
+                          dish={{ id: idx, name: item.title, description: item.desc, price: item.price }}
+                          index={idx}
+                          isSpecial={true}
+                          isPopular={true}
+                          variant="featured"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
+            );
+          })()}
 
           {/* Menu Items */}
           {filteredDishes.length > 0 ? (

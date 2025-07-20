@@ -61,20 +61,13 @@ export default function Indian() {
       {/* Premium Menu Section */}
       <MenuContainer 
         dishes={indianData} 
-        title="Indian Specials"
+        title="Indian"
         description="Experience authentic Indian cuisine with our carefully curated selection of traditional dishes, rich in spices and flavors."
-        specialDishes={[
-          "Butter Chicken",
-          "Lamb Biryani",
-          "Rogan Josh",
-          "Chicken Tikka Masala"
-        ] as string[]}
         popularDishes={[
-          "Paneer Makhani",
-          "Dal Makhani",
           "Chicken Vindaloo",
-          "Saag Paneer",
-          "Appetizer Platter for 2"
+          "Lamb Tikka Masala",
+          "Lamb Biryani",
+          "Paneer Masala"
         ] as string[]}
       />
     </PageWrapper>

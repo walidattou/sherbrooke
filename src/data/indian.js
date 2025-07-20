@@ -1,524 +1,362 @@
 export const indianData = [
   {
     id: 1,
-    name: "Butter Chicken",
-    description: "Creamy tomato-based curry with tender chicken",
-    price: "$19.99",
+    name: "Soupe Dal",
+    description: "Traditional Indian lentil soup",
+    price: "$3.95"
   },
   {
     id: 2,
-    name: "Lamb Biryani",
-    description: "Aromatic basmati rice with spiced lamb",
-    price: "$24.99",
+    name: "Soupe Mulligatawny",
+    description: "Spicy Indian soup with lentils, chicken, and rice",
+    price: "$4.95"
   },
   {
     id: 3,
-    name: "Paneer Makhani",
-    description: "Indian cottage cheese in rich tomato cream sauce",
-    price: "$17.99",
+    name: "Oignons Bhaji",
+    description: "Crispy onion fritters seasoned with Indian spices",
+    price: "$4.95"
   },
   {
     id: 4,
-    name: "Dal Makhani",
-    description: "Creamy black lentils slow-cooked overnight",
-    price: "$15.99",
+    name: "Samosas aux légumes (2)",
+    description: "Two crispy pastries filled with spiced vegetables",
+    price: "$3.95"
   },
   {
     id: 5,
-    name: "Chicken Vindaloo",
-    description: "Spicy Portuguese-influenced curry with potatoes",
-    price: "$20.99",
+    name: "Samosas au poulet (2)",
+    description: "Two crispy pastries filled with spiced chicken",
+    price: "$4.95"
   },
   {
     id: 6,
-    name: "Saag Paneer",
-    description: "Spinach curry with cubes of fresh paneer",
-    price: "$16.99",
+    name: "Poulet Tikka (2)",
+    description: "Two pieces of marinated and grilled chicken tikka",
+    price: "$7.95"
   },
   {
     id: 7,
-    name: "Rogan Josh",
-    description: "Aromatic lamb curry with Kashmiri spices",
-    price: "$23.99",
+    name: "Mixed Vegetables Bhoji",
+    description: "Mixed vegetables stir-fried with onions, tomatoes, herbs and spices",
+    price: "$9.95"
   },
   {
     id: 8,
-    name: "Chicken Tikka Masala",
-    description: "Grilled chicken in creamy tomato masala sauce",
-    price: "$21.99",
+    name: "Methi Aloo",
+    description: "Curry of potatoes and fenugreek leaves",
+    price: "$10.95"
   },
   {
     id: 9,
-    name: "Vegetables Samosa (2 pcs)",
-    description: "Crispy pastries stuffed with fresh mixed vegetables",
-    price: "$3.95",
+    name: "Saag Aloo",
+    description: "Spinach and potatoes cooked with herbs and spices",
+    price: "$9.95"
   },
   {
     id: 10,
-    name: "Onion Bhaji (6 pcs)",
-    description: "Seasoned vegetable fritters fried in Indian butter",
-    price: "$4.95",
+    name: "Aloo Gobi",
+    description: "Cauliflower and potatoes cooked with herbs and spices",
+    price: "$8.95"
   },
   {
     id: 11,
-    name: "Appetizer Platter for 2",
-    description: "Assortment of seekh kabab, onion bhaji, samosa and pakora with salad",
-    price: "$12.95",
+    name: "Chana Masala",
+    description: "Chickpeas cooked with onions, tomatoes, herbs and spices",
+    price: "$7.95"
   },
   {
     id: 12,
-    name: "Chicken Curry",
-    description: "Traditional chicken curry with aromatic spices",
-    price: "$11.95",
+    name: "Baingan Bhaji",
+    description: "Eggplant cooked with onions, tomatoes, herbs and spices",
+    price: "$9.99"
   },
   {
     id: 13,
-    name: "Beef Curry",
-    description: "Tender beef in spiced curry sauce",
-    price: "$15.95",
+    name: "Saag Paneer",
+    description: "Spinach and homemade cheese cooked with herbs and spices",
+    price: "$12.95"
   },
   {
     id: 14,
-    name: "Lamb Curry",
-    description: "Succulent lamb in rich curry sauce",
-    price: "$16.95",
+    name: "Matar Paneer",
+    description: "Peas and homemade cheese cooked with herbs and spices",
+    price: "$12.95"
   },
   {
     id: 15,
-    name: "Shrimp Curry",
-    description: "Fresh shrimp in aromatic curry sauce",
-    price: "$16.95",
+    name: "Korma Vegetables",
+    description: "Mixed vegetables cooked in a creamy sauce with coconut and spices",
+    price: "$9.95"
   },
   {
     id: 16,
-    name: "Chicken Bhuna",
-    description: "Chicken cooked with onions, tomatoes and spices",
-    price: "$13.95",
+    name: "Mixed Vegetables Madras",
+    description: "Mixed vegetables cooked in a spicy Madras sauce",
+    price: "$9.95"
   },
   {
     id: 17,
-    name: "Beef Bhuna",
-    description: "Beef prepared with onions, tomatoes and herbs",
-    price: "$13.95",
+    name: "Paneer Masala",
+    description: "Homemade cheese cooked in a creamy tomato sauce",
+    price: "$10.95"
   },
   {
     id: 18,
-    name: "Lamb Bhuna",
-    description: "Lamb cooked with aromatic spices and vegetables",
-    price: "$15.95",
+    name: "Biryani Vegetables",
+    description: "Mixed vegetables with saffron-coloured basmati rice",
+    price: "$11.95"
   },
   {
     id: 19,
-    name: "Shrimp Bhuna",
-    description: "Shrimp cooked with onions and traditional spices",
-    price: "$16.95",
+    name: "Biryani Chicken",
+    description: "Chicken pieces with saffron-coloured basmati rice",
+    price: "$13.95"
   },
   {
     id: 20,
-    name: "Lamb Pasanda",
-    description: "Tender lamb slices in creamy almond sauce",
-    price: "$15.95",
+    name: "Lamb Biryani",
+    description: "Lamb pieces with saffron-coloured basmati rice",
+    price: "$16.95"
   },
   {
     id: 21,
-    name: "Lamb Tikka Masala",
-    description: "Lamb pieces cooked in rich tomato masala sauce",
-    price: "$14.95",
+    name: "Shrimps Biryani",
+    description: "Shrimp with saffron-coloured basmati rice",
+    price: "$17.95"
   },
   {
     id: 22,
-    name: "Shrimp Tandoori Masala",
-    description: "Tandoori shrimp in spiced masala sauce",
-    price: "$15.95",
+    name: "Cabasyl Biryani",
+    description: "Special Biryani with chicken, mushrooms, spinach and potatoes",
+    price: "$16.95"
   },
   {
     id: 23,
-    name: "Chicken Kashmiri",
-    description: "Chicken curry with fruits and nuts, Kashmiri style",
-    price: "$14.95",
+    name: "Egg biryani",
+    description: "Egg Biryani",
+    price: "$10.95"
   },
   {
     id: 24,
-    name: "Beef Vindaloo",
-    description: "Very spicy beef curry with potatoes and ginger",
-    price: "$13.95",
+    name: "Beef Biryani",
+    description: "Spiced beef with fragrant basmati rice.",
+    price: "$19.95"
   },
   {
     id: 25,
-    name: "Lamb Vindaloo",
-    description: "Fiery lamb curry with potatoes and aromatic spices",
-    price: "$15.95",
+    name: "Chicken or beef Jalfrezi",
+    description: "Chicken cooked with onions, tomatoes, peppers and spices",
+    price: "$14.99"
   },
   {
     id: 26,
-    name: "Chicken Madras",
-    description: "Spicy chicken curry with onions, garlic and ginger",
-    price: "$13.95",
+    name: "Korma (Chicken or Beef)",
+    description: "Chicken or beef cooked in a creamy sauce with coconut and spices",
+    price: "$15.95"
   },
   {
     id: 27,
-    name: "Beef Madras",
-    description: "Hot beef curry with traditional South Indian spices",
-    price: "$13.95",
+    name: "Achar Gosht",
+    description: "Lamb cooked with pickled spices",
+    price: "$14.95"
   },
   {
     id: 28,
-    name: "Lamb Madras",
-    description: "Spicy lamb curry with aromatic madras spices",
-    price: "$15.95",
+    name: "Lamb Tikka Masala",
+    description: "Lamb cooked in a creamy tomato sauce",
+    price: "$14.95"
   },
   {
     id: 29,
-    name: "Chicken Saag",
-    description: "Chicken cooked with fresh spinach and spices",
-    price: "$14.95",
+    name: "Shrimp Tandoori Masala",
+    description: "Shrimp cooked in a creamy masala sauce",
+    price: "$15.95"
   },
   {
     id: 30,
-    name: "Lamb Saag",
-    description: "Tender lamb with spinach and aromatic herbs",
-    price: "$16.95",
+    name: "Shrimp Malai",
+    description: "Shrimp cooked in a creamy coconut sauce",
+    price: "$17.95"
   },
   {
     id: 31,
-    name: "Beef Saag",
-    description: "Beef cooked with spinach and traditional spices",
-    price: "$15.95",
+    name: "Curry (Chicken)",
+    description: "Chicken cooked in a traditional curry sauce",
+    price: "$11.95"
   },
   {
     id: 32,
-    name: "Shrimp Saag",
-    description: "Shrimp with fresh spinach and Indian spices",
-    price: "$16.95",
+    name: "Curry (Beef)",
+    description: "Beef cooked in a traditional curry sauce",
+    price: "$13.95"
   },
   {
     id: 33,
-    name: "Chicken Korma",
-    description: "Mild chicken curry in creamy coconut sauce",
-    price: "$14.95",
+    name: "Curry (Lamb)",
+    description: "Lamb cooked in a traditional curry sauce",
+    price: "$16.95"
   },
   {
     id: 34,
-    name: "Lamb Korma",
-    description: "Tender lamb in rich, creamy korma sauce",
-    price: "$16.95",
+    name: "Curry (Shrimp)",
+    description: "Shrimp cooked in a traditional curry sauce",
+    price: "$17.95"
   },
   {
     id: 35,
-    name: "Beef Korma",
-    description: "Beef in mild, creamy curry sauce",
-    price: "$15.95",
+    name: "Saag (Chicken)",
+    description: "Chicken cooked with spinach and vegtables",
+    price: "$13.99"
   },
   {
     id: 36,
-    name: "Shrimp Korma",
-    description: "Shrimp in delicate coconut korma sauce",
-    price: "$16.95",
+    name: "Saag (beef)",
+    description: "beef cooked with spinach and vegtables",
+    price: "$14.99"
   },
   {
     id: 37,
-    name: "Chicken Tandoori",
-    description: "Marinated chicken cooked in traditional tandoori oven",
-    price: "$16.98",
+    name: "Saag (Lamb)",
+    description: "lamb cooked with spinach and vegtables",
+    price: "$16.95"
   },
   {
     id: 38,
-    name: "Lamb Tikka",
-    description: "Lamb pieces marinated in spices with vegetables and salad",
-    price: "$18.95",
+    name: "Saag (Shrimps)",
+    description: "Shrimps cooked with spinach and vegtables",
+    price: "$16.95"
   },
   {
     id: 39,
-    name: "Shrimp Malai",
-    description: "Shrimp cooked in creamy coconut curry",
-    price: "$17.95",
+    name: "Dansak (Chicken)",
+    description: "Chicken cooked with lentils",
+    price: "$13.95"
   },
   {
     id: 40,
-    name: "Chicken Biryani",
-    description: "Aromatic basmati rice with spiced chicken",
-    price: "$14.95",
+    name: "Dansak (Beef)",
+    description: "Beef cooked with lentils",
+    price: "$13.95"
   },
   {
     id: 41,
-    name: "Beef Biryani",
-    description: "Fragrant basmati rice with seasoned beef",
-    price: "$14.95",
+    name: "Dansak (Lamb)",
+    description: "Lamb cooked with lentils",
+    price: "$16.95"
   },
   {
     id: 42,
-    name: "Egg Biryani",
-    description: "Saffron-colored basmati rice with boiled eggs",
-    price: "$12.95",
+    name: "Chicken Pathia",
+    description: "Slightly spicy, sweet and sour curry with coconut, herbs and spices",
+    price: "$14.95"
   },
   {
     id: 43,
-    name: "Shrimp Biryani",
-    description: "Aromatic rice with spiced shrimp",
-    price: "$16.95",
+    name: "Beef Pathia",
+    description: "Slightly spicy, sweet and sour curry with coconut, herbs and spices",
+    price: "$14.95"
   },
   {
     id: 44,
-    name: "Sherbrooke Special Biryani",
-    description: "Special biryani with shrimp, mushrooms, spinach and chicken tikka",
-    price: "$18.95",
+    name: "Lamb Pathia",
+    description: "Slightly spicy, sweet and sour curry with coconut, herbs and spices",
+    price: "$15.95"
   },
   {
     id: 45,
-    name: "Chapati",
-    description: "Very thin wheat bread, traditional Indian flatbread",
-    price: "$2.95",
+    name: "Chicken Madras",
+    description: "Spicy curry with glazed onions, garlic, ginger and hot peppers",
+    price: "$13.95"
   },
   {
     id: 46,
-    name: "Naan",
-    description: "Traditional Indian white bread baked in tandoor oven",
-    price: "$3.95",
+    name: "Beef Madras",
+    description: "Spicy curry with glazed onions, garlic, ginger and hot peppers",
+    price: "$13.95"
   },
   {
     id: 47,
-    name: "Garlic Naan",
-    description: "Traditional white bread garnished with garlic and coriander",
-    price: "$4.95",
+    name: "Lamb Madras",
+    description: "Spicy curry with glazed onions, garlic, ginger and hot peppers",
+    price: "$15.95"
   },
   {
     id: 48,
-    name: "Cheese Naan",
-    description: "Traditional white bread stuffed with cheese",
-    price: "$5.95",
+    name: "Chicken Vindaloo",
+    description: "Very spicy curry with potatoes, glazed onions, garlic, ginger and hot peppers",
+    price: "$13.95"
   },
   {
     id: 49,
-    name: "Paratha",
-    description: "Layered wheat flatbread, pan-fried until crispy",
-    price: "$4.95",
+    name: "Beef Vindaloo",
+    description: "Very spicy curry with potatoes, glazed onions, garlic, ginger and hot peppers",
+    price: "$13.95"
   },
   {
     id: 50,
-    name: "Mixed Vegetable Bhaji",
-    description: "Mixed vegetables sautéed with onions, tomatoes, herbs and spices",
-    price: "$9.95",
+    name: "Lamb Vindaloo",
+    description: "Very spicy curry with potatoes, glazed onions, garlic, ginger and hot peppers",
+    price: "$15.95"
   },
   {
     id: 51,
-    name: "Saag Aloo Bhaji",
-    description: "Fresh spinach and potatoes cooked with onions and herbs",
-    price: "$10.95",
+    name: "Chicken Bhuna",
+    description: "Onion-tomato curry with green peppers in thick mildly spiced sauce",
+    price: "$13.95"
   },
   {
     id: 52,
-    name: "Aloo Gobi",
-    description: "Cauliflower and potatoes cooked with aromatic spices",
-    price: "$9.95",
+    name: "Beef Bhuna",
+    description: "Onion-tomato curry with green peppers in thick mildly spiced sauce",
+    price: "$13.95"
   },
   {
     id: 53,
-    name: "Mushroom Bhaji",
-    description: "Fresh mushrooms cooked with onions, tomatoes and spices",
-    price: "$10.95",
+    name: "Lamb Bhuna",
+    description: "Onion-tomato curry with green peppers in thick mildly spiced sauce",
+    price: "$16.95"
   },
   {
     id: 54,
-    name: "Bangan Bhaji",
-    description: "Fresh eggplant cooked with onions, tomatoes and herbs",
-    price: "$10.95",
+    name: "Shrimp Bhuna",
+    description: "Onion-tomato curry with green peppers in thick mildly spiced sauce",
+    price: "$16.95"
   },
   {
     id: 55,
-    name: "Saag Paneer",
-    description: "Homemade Indian cheese cooked with fresh spinach",
-    price: "$12.95",
+    name: "Kashmiri Curry",
+    description: "Sweet curry with lychees, almonds, coconut, and pineapple",
+    price: "$13.95"
   },
   {
     id: 56,
-    name: "Chana Masala",
-    description: "Seasoned chickpeas mixed with masala sauce",
-    price: "$7.95",
+    name: "Chapati",
+    description: "Very thin whole wheat unleavened bread",
+    price: "$2.95"
   },
   {
     id: 57,
-    name: "Vegetables Korma",
-    description: "Mixed vegetables in mild, creamy coconut curry",
-    price: "$9.95",
+    name: "Naan",
+    description: "Traditional Indian white bread baked in clay oven",
+    price: "$3.95"
   },
   {
     id: 58,
-    name: "Paneer Masala",
-    description: "Homemade Indian cheese with masala spices and peppers",
-    price: "$11.95",
+    name: "Garlic Naan",
+    description: "Traditional naan bread topped with fresh garlic and cilantro",
+    price: "$4.95"
   },
   {
     id: 59,
-    name: "Cauliflower Bhaji",
-    description: "Fresh cauliflower cooked with traditional spices",
-    price: "$9.95",
+    name: "Cheese Naan",
+    description: "Traditional naan stuffed with mozzarella cheese",
+    price: "$4.95"
   },
   {
     id: 60,
-    name: "Tarka Daal",
-    description: "Lentils cooked with aromatic spices and herbs",
-    price: "$8.95",
-  },
-  {
-    id: 61,
-    name: "Methi Aloo",
-    description: "Potatoes cooked with fenugreek leaves and spices",
-    price: "$9.95",
-  },
-  {
-    id: 62,
-    name: "Vegetables Madras",
-    description: "Spicy mixed vegetables curry with madras spices",
-    price: "$10.95",
-  },
-  {
-    id: 63,
-    name: "Mixed Vegetables Curry",
-    description: "Seasonal vegetables in aromatic curry sauce",
-    price: "$9.95",
-  },
-  {
-    id: 64,
-    name: "Tandoori Vegetables",
-    description: "Mixed vegetables marinated and cooked in tandoor oven",
-    price: "$12.95",
-  },
-  {
-    id: 65,
-    name: "Pulao Rice",
-    description: "Aromatic basmati rice with saffron and spices",
-    price: "$4.95",
-  },
-  {
-    id: 66,
-    name: "Basmati Rice",
-    description: "Premium long-grain basmati rice",
-    price: "$3.95",
-  },
-  {
-    id: 67,
-    name: "Vegetables Rice",
-    description: "Basmati rice cooked with mixed vegetables",
-    price: "$5.95",
-  },
-  {
-    id: 68,
-    name: "Papadum",
-    description: "Crispy lentil wafers, traditional Indian appetizer",
-    price: "$2.95",
-  },
-  {
-    id: 69,
-    name: "Mango Chutney",
-    description: "Sweet and tangy mango preserve with spices",
-    price: "$3.95",
-  },
-  {
-    id: 70,
-    name: "Cucumber Raita",
-    description: "Yogurt with grated cucumber and spices",
-    price: "$4.95",
-  },
-  {
-    id: 71,
-    name: "Onion Raita",
-    description: "Yogurt with seasoned onions and spices",
-    price: "$4.95",
-  },
-  {
-    id: 72,
-    name: "Butter Sauce",
-    description: "Rich, creamy butter sauce for Indian dishes",
-    price: "$3.95",
-  },
-  {
-    id: 73,
-    name: "Madras Sauce",
-    description: "Spicy South Indian sauce with aromatic spices",
-    price: "$3.95",
-  },
-  {
-    id: 74,
-    name: "Spiced Tea",
-    description: "Typical Indian tea flavored with variety of spices",
-    price: "$3.95",
-  },
-  {
-    id: 75,
-    name: "Masala Tea",
-    description: "Traditional Indian tea with spices and milk",
-    price: "$4.95",
-  },
-  {
-    id: 76,
-    name: "Chef's Special Salad",
-    description: "House-made special chef's salad with Indian flavors",
-    price: "$10.99",
-  },
-  {
-    id: 77,
-    name: "Combo A (1 person)",
-    description: "2 vegetable samosas, chicken bhuna, mixed vegetables, pulao rice, papadum, dessert",
-    price: "$25.95",
-  },
-  {
-    id: 78,
-    name: "Combo B (2 persons)",
-    description: "Mixed appetizers, chicken kashmiri, chicken tandoori, mushroom bhaji, chana masala, vegetables rice, naan, papadum, dessert",
-    price: "$47.95",
-  },
-  {
-    id: 79,
-    name: "Combo C (2 persons)",
-    description: "Mixed appetizers, fish tikka masala, chicken tikka, pulao rice, naan, papadum, dessert",
-    price: "$48.95",
-  },
-  {
-    id: 80,
-    name: "Combo D (2 persons)",
-    description: "Seekh kabab, onion bhaji, butter chicken, shrimp bhuna, mixed vegetables, pulao rice, naan, papadum, dessert",
-    price: "$52.95",
-  },
-  {
-    id: 81,
-    name: "Vegetarian Combo (2 persons)",
-    description: "Vegetable samosa, vegetable pakora, aloo gobi, saag paneer, tarka daal, pulao rice, naan, papadum, dessert",
-    price: "$42.95",
-  },
-  {
-    id: 82,
-    name: "Vegetarian Combo (1 person)",
-    description: "Vegetable pakora, butter chicken, saag aloo, pulao rice, papadum, dessert",
-    price: "$16.95",
-  },
-  {
-    id: 83,
-    name: "Seekh Kabab",
-    description: "Spiced ground meat skewers cooked in tandoor",
-    price: "$12.95",
-  },
-  {
-    id: 84,
-    name: "Vegetable Pakora",
-    description: "Mixed vegetable fritters in chickpea batter",
-    price: "$5.95",
-  },
-  {
-    id: 85,
-    name: "Fish Tikka Masala",
-    description: "Grilled fish in rich tikka masala sauce",
-    price: "$17.95",
-  },
-  {
-    id: 86,
-    name: "Chicken Tikka",
-    description: "Marinated chicken pieces cooked in tandoor oven",
-    price: "$14.95",
-  },
-  {
-    id: 87,
-    name: "Achar Gosht",
-    description: "Spiced meat curry with pickle flavors",
-    price: "$14.95",
+    name: "Paratha",
+    description: "Flaky layered flatbread pan-fried with ghee",
+    price: "$4.95"
   },
 ];

@@ -63,6 +63,12 @@ export default function Seafood() {
         dishes={seafoodData} 
         title="Seafood" 
         description="Explore our fresh and flavorful seafood selection, featuring the finest catches prepared with expert culinary techniques."
+        popularDishes={[
+          "Sherbrooke Seafood Platter",
+          "Grilled Jumbo Shrimps",
+          "Salmon",
+          "Sherbrooke Land & Sea Platter"
+        ] as string[]}
       />
     </PageWrapper>
   );

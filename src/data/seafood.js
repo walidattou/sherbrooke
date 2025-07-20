@@ -1,452 +1,97 @@
 export const seafoodData = [
   {
     id: 1,
-    name: "Fish Curry",
-    description: "Fresh fish cooked in coconut curry sauce",
-    price: "$22.99",
-  },
-  {
+    name: "Salmon",
+    description: "Salmon",
+    price: "$22.99"
+  },{
     id: 2,
-    name: "Grilled Shrimp",
-    description: "Marinated shrimp grilled with Indian spices",
-    price: "$25.99",
-  },
-  {
+    name: "Mediterranean Seafood (1 person)",
+    description: "Mediterranean sea bass",
+    price: "$35.99"
+  },{
     id: 3,
-    name: "Fish Tikka",
-    description: "Tandoori-style fish pieces with mint chutney",
-    price: "$24.99",
-  },
-  {
+    name: "Mediterranean Seafood (2 person)",
+    description: "Mediterranean sea bass",
+    price: "$54.99"
+  },{
     id: 4,
-    name: "Seafood Biryani",
-    description: "Aromatic basmati rice with mixed seafood",
-    price: "$27.99",
-  },
-  {
+    name: "Grilled Jumbo Shrimps",
+    description: "Grilled Jumbo shrimps",
+    price: "$35.99"
+  },{
     id: 5,
-    name: "Coconut Shrimp Curry",
-    description: "Shrimp in rich coconut and tomato curry",
-    price: "$23.99",
-  },
-  {
+    name: "Shrimps",
+    description: "Jumbo shrimp",
+    price: "$9.99"
+  },{
     id: 6,
-    name: "Salmon Tikka",
-    description: "Grilled salmon with yogurt and spice marinade",
-    price: "$28.99",
-  },
-  {
+    name: "calamari",
+    description: "calamari fried or grilled",
+    price: "$13.99"
+  },{
     id: 7,
-    name: "Sea Bass",
-    description: "Fresh sea bass with choice of green or Greek salad",
-    price: "$32.99",
-  },
-  {
+    name: "Shrimps Saag",
+    description: "Shrimps Saag",
+    price: "$13.99"
+  },{
     id: 8,
-    name: "Grilled Salmon",
-    description: "Fresh salmon grilled with Mediterranean herbs",
-    price: "$29.99",
-  },
-  {
+    name: "Malai Shrimps",
+    description: "Malai Shrimps",
+    price: "$17.95"
+  },{
     id: 9,
     name: "Shrimp Curry",
-    description: "Traditional shrimp curry with aromatic spices",
-    price: "$16.95",
-  },
-  {
+    description: "Shrimps Curry",
+    price: "$16.95"
+  },{
     id: 10,
-    name: "Shrimp Bhuna",
-    description: "Shrimp cooked with onions, tomatoes and spices",
-    price: "$16.95",
-  },
-  {
+    name: "Fillet of Sole",
+    description: "Fillet of sole",
+    price: "$17.95"
+  },{
     id: 11,
-    name: "Shrimp Korma",
-    description: "Shrimp in mild, creamy coconut curry sauce",
-    price: "$16.95",
-  },
-  {
+    name: "Shrimps Biryani",
+    description: "Shrimp with saffron-coloured basmati rice",
+    price: "$17.95"
+  },{
     id: 12,
-    name: "Shrimp Saag",
-    description: "Shrimp with fresh spinach and Indian spices",
-    price: "$16.95",
-  },
-  {
+    name: "Saag (Shrimps)",
+    description: "Shrimps cooked with spinach and vegtables",
+    price: "$16.95"
+  },{
     id: 13,
-    name: "Shrimp Tandoori Masala",
-    description: "Tandoori shrimp in rich masala sauce",
-    price: "$15.95",
-  },
-  {
+    name: "Grilled Jumbo Shrimps (4 pcs)",
+    description: "Four pieces of jumbo shrimps perfectly grilled",
+    price: "$35.99"
+  },{
     id: 14,
-    name: "Shrimp Malai",
-    description: "Shrimp and scallops cooked with coconut and spices",
-    price: "$17.95",
+    name: "Mix Grill Platter",
+    description: "Selection of chicken, lamb chop, shrimps, mushrooms and peppers",
+    price: "$59.95"
   },
   {
     id: 15,
-    name: "Shrimp Biryani",
-    description: "Aromatic basmati rice with spiced shrimp",
-    price: "$16.95",
+    name: "Sherbrooke Seafood Platter",
+    description: "Greek salad, grilled shrimp (4), salmon (1), grilled octopus, fried calamari",
+    price: "$70.00"
   },
   {
     id: 16,
-    name: "Sherbrooke Special Biryani",
-    description: "Special biryani with shrimp, mushrooms, spinach and chicken tikka",
-    price: "$18.95",
+    name: "Sherbrooke Land & Sea Platter",
+    description: "Amira's Special: Greek salad, chicken breast fillet, filet mignon skewer (1), lamb chop (4), grilled shrimp (4), salmon (1), fried calamari",
+    price: "$115.00"
   },
   {
     id: 17,
-    name: "Grilled Jumbo Shrimp (4 pcs)",
-    description: "Four large grilled shrimp with garlic and herbs",
-    price: "$28.99",
+    name: "Hussain Special",
+    description: "Specialia: kabab (2), fried calamari, beef entrecôte, lamb chops (8), braised half chicken, chicken wings (8)",
+    price: "$145.00"
   },
   {
     id: 18,
-    name: "Jumbo Shrimp (6-8 pcs)",
-    description: "Six to eight pieces of premium jumbo shrimp",
-    price: "$35.99",
-  },
-  {
-    id: 19,
-    name: "Fried Calamari",
-    description: "Crispy fried squid rings with marinara sauce",
-    price: "$19.99",
-  },
-  {
-    id: 20,
-    name: "Grilled Octopus",
-    description: "Mediterranean-style grilled octopus with olive oil",
-    price: "$26.99",
-  },
-  {
-    id: 21,
-    name: "Fish n' Chips",
-    description: "Beer-battered fish with crispy fries",
-    price: "$18.99",
-  },
-  {
-    id: 22,
-    name: "Mediterranean Sea Bass",
-    description: "Sea bass prepared Mediterranean style for one person",
-    price: "$35.99",
-  },
-  {
-    id: 23,
-    name: "Chilean Sea Bass",
-    description: "Premium Chilean sea bass with lemon and herbs",
-    price: "$38.99",
-  },
-  {
-    id: 24,
-    name: "Sherbrooke Seafood",
-    description: "Greek salad, grilled shrimp (4), salmon (1), grilled octopus, fried calamari",
-    price: "$70.00",
-  },
-  {
-    id: 25,
-    name: "Sherbrooke Land & Sea",
-    description: "Chicken breast fillet, filet mignon skewer, lamb chop (4), grilled shrimp (4), salmon (1), calamari",
-    price: "$70.00",
-  },
-  {
-    id: 26,
-    name: "Amira's Special",
-    description: "Greek salad, chicken breast fillet, filet mignon skewer, lamb chop (4), grilled shrimp (4), salmon (1), fried calamari",
-    price: "$70.00",
-  },
-  {
-    id: 27,
-    name: "Fish Tikka Masala",
-    description: "Grilled fish in rich tikka masala sauce",
-    price: "$17.95",
-  },
-  {
-    id: 28,
-    name: "Chicken & Jumbo Shrimp",
-    description: "Grilled chicken with 2 jumbo shrimp",
-    price: "$32.99",
-  },
-  {
-    id: 29,
-    name: "Lamb Chops & Jumbo Shrimp",
-    description: "2 lamb chops with 2 jumbo shrimp",
-    price: "$37.99",
-  },
-  {
-    id: 30,
-    name: "Filet Mignon & Jumbo Shrimp",
-    description: "Premium filet mignon with 1 jumbo shrimp",
-    price: "$42.99",
-  },
-  {
-    id: 31,
-    name: "Grilled Oysters",
-    description: "Fresh oysters grilled with garlic butter",
-    price: "$24.99",
-  },
-  {
-    id: 32,
-    name: "Seafood Platter for 2",
-    description: "Mixed seafood selection perfect for sharing",
-    price: "$55.99",
-  },
-  {
-    id: 33,
-    name: "Seafood Platter for 4",
-    description: "Large seafood platter with variety of fresh catches",
-    price: "$85.99",
-  },
-  {
-    id: 34,
-    name: "Grilled Lobster Tail",
-    description: "Succulent lobster tail grilled with herb butter",
-    price: "$45.99",
-  },
-  {
-    id: 35,
-    name: "Seafood Pasta",
-    description: "Mixed seafood with linguine in garlic white wine sauce",
-    price: "$29.99",
-  },
-  {
-    id: 36,
-    name: "Shrimp Scampi",
-    description: "Jumbo shrimp in garlic butter and white wine",
-    price: "$26.99",
-  },
-  {
-    id: 37,
-    name: "Coconut Curry Fish",
-    description: "Fresh fish in creamy coconut curry sauce",
-    price: "$24.99",
-  },
-  {
-    id: 38,
-    name: "Tandoori Fish",
-    description: "Whole fish marinated in yogurt and spices, cooked in tandoor",
-    price: "$28.99",
-  },
-  {
-    id: 39,
-    name: "Seafood Masala",
-    description: "Mixed seafood in spiced masala sauce",
-    price: "$31.99",
-  },
-  {
-    id: 40,
-    name: "Grilled Scallops",
-    description: "Pan-seared scallops with lemon butter sauce",
-    price: "$34.99",
-  },
-  {
-    id: 41,
-    name: "Crab Cakes",
-    description: "Pan-fried crab cakes with remoulade sauce",
-    price: "$27.99",
-  },
-  {
-    id: 42,
-    name: "Stuffed Salmon",
-    description: "Salmon fillet stuffed with crab meat and herbs",
-    price: "$32.99",
-  },
-  {
-    id: 43,
-    name: "Seafood Risotto",
-    description: "Creamy risotto with mixed seafood and saffron",
-    price: "$28.99",
-  },
-  {
-    id: 44,
-    name: "Mussels Marinière",
-    description: "Fresh mussels in white wine and garlic broth",
-    price: "$22.99",
-  },
-  {
-    id: 45,
-    name: "Clam Chowder",
-    description: "Creamy New England style clam chowder",
-    price: "$12.99",
-  },
-  {
-    id: 46,
-    name: "Seafood Soup",
-    description: "Rich seafood soup with mixed catches of the day",
-    price: "$16.99",
-  },
-  {
-    id: 47,
-    name: "Grilled Tuna Steak",
-    description: "Fresh tuna steak grilled to perfection with sesame crust",
-    price: "$33.99",
-  },
-  {
-    id: 48,
-    name: "Blackened Catfish",
-    description: "Cajun-spiced catfish with rice and vegetables",
-    price: "$21.99",
-  },
-  {
-    id: 49,
-    name: "Seafood Curry",
-    description: "Mixed seafood in traditional Indian curry sauce",
-    price: "$26.99",
-  },
-  {
-    id: 50,
-    name: "Fish Vindaloo",
-    description: "Spicy fish curry with potatoes and aromatic spices",
-    price: "$23.99",
-  },
-  {
-    id: 51,
-    name: "Coconut Shrimp",
-    description: "Breaded shrimp with coconut flakes, served with sweet chili sauce",
-    price: "$24.99",
-  },
-  {
-    id: 52,
-    name: "Seafood Paella",
-    description: "Traditional Spanish paella with mixed seafood and saffron rice",
-    price: "$35.99",
-  },
-  {
-    id: 53,
-    name: "Grilled Swordfish",
-    description: "Fresh swordfish steak with lemon and Mediterranean herbs",
-    price: "$31.99",
-  },
-  {
-    id: 54,
-    name: "Seafood Gumbo",
-    description: "Creole-style gumbo with shrimp, crab, and andouille sausage",
-    price: "$19.99",
-  },
-  {
-    id: 55,
-    name: "Lobster Bisque",
-    description: "Rich and creamy lobster bisque with brandy",
-    price: "$14.99",
-  },
-  {
-    id: 56,
-    name: "Shrimp Tempura",
-    description: "Light and crispy Japanese-style shrimp tempura",
-    price: "$22.99",
-  },
-  {
-    id: 57,
-    name: "Seafood Linguine",
-    description: "Linguine pasta with mixed seafood in marinara sauce",
-    price: "$27.99",
-  },
-  {
-    id: 58,
-    name: "Grilled Halibut",
-    description: "Fresh halibut with herbs and lemon butter",
-    price: "$36.99",
-  },
-  {
-    id: 59,
-    name: "Seafood Jambalaya",
-    description: "Spicy rice dish with shrimp, crab, and Creole seasonings",
-    price: "$24.99",
-  },
-  {
-    id: 60,
-    name: "Baked Cod",
-    description: "Fresh cod baked with breadcrumbs and herbs",
-    price: "$23.99",
-  },
-  {
-    id: 61,
-    name: "Seafood Kabobs",
-    description: "Mixed seafood skewers with vegetables, grilled to perfection",
-    price: "$29.99",
-  },
-  {
-    id: 62,
-    name: "Cioppino",
-    description: "San Francisco-style seafood stew in tomato broth",
-    price: "$32.99",
-  },
-  {
-    id: 63,
-    name: "Grilled Mahi Mahi",
-    description: "Fresh mahi mahi with tropical fruit salsa",
-    price: "$28.99",
-  },
-  {
-    id: 64,
-    name: "Seafood Alfredo",
-    description: "Fettuccine alfredo with mixed seafood",
-    price: "$26.99",
-  },
-  {
-    id: 65,
-    name: "Stuffed Shrimp",
-    description: "Jumbo shrimp stuffed with crab meat and breadcrumbs",
-    price: "$31.99",
-  },
-  {
-    id: 66,
-    name: "Seafood Thermidor",
-    description: "Mixed seafood in rich cream sauce, baked with cheese",
-    price: "$38.99",
-  },
-  {
-    id: 67,
-    name: "Grilled Red Snapper",
-    description: "Whole red snapper grilled with lime and cilantro",
-    price: "$34.99",
-  },
-  {
-    id: 68,
-    name: "Seafood Enchiladas",
-    description: "Shrimp and crab enchiladas with green chili sauce",
-    price: "$23.99",
-  },
-  {
-    id: 69,
-    name: "Coconut Curry Mussels",
-    description: "Fresh mussels in coconut curry broth",
-    price: "$24.99",
-  },
-  {
-    id: 70,
-    name: "Seafood Quesadilla",
-    description: "Grilled tortilla with mixed seafood and cheese",
-    price: "$21.99",
-  },
-  {
-    id: 71,
-    name: "Grilled Salmon Teriyaki",
-    description: "Salmon glazed with teriyaki sauce and sesame seeds",
-    price: "$29.99",
-  },
-  {
-    id: 72,
-    name: "Seafood Tacos (3 pcs)",
-    description: "Three soft tacos with grilled fish and mango salsa",
-    price: "$18.99",
-  },
-  {
-    id: 73,
-    name: "Surf and Turf",
-    description: "Grilled lobster tail with filet mignon steak",
-    price: "$54.99",
-  },
-  {
-    id: 74,
-    name: "Seafood Salad",
-    description: "Mixed greens with grilled shrimp, scallops, and citrus vinaigrette",
-    price: "$22.99",
-  },
-  {
-    id: 75,
-    name: "Grilled Whole Fish",
-    description: "Fresh whole fish grilled with Mediterranean herbs (market price)",
-    price: "$39.99",
+    name: "1.2kg Mixed Grills",
+    description: "400g souvlaki, 200g kabab, 200g filet mignon, 200g chicken shawarma, 200g beef shawarma",
+    price: "$65.00"
   },
 ];

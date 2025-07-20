@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import DishCard from "./DishCard";
 import FilterBar from "./FilterBar";
 import LoadingSpinner from "./LoadingSpinner";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import CarouselHighlights from './CarouselHighlights';
 
 interface Dish {
   id: number;
@@ -188,20 +191,153 @@ export default function MenuContainer({
                 <h2 className="text-2xl font-bold text-white mb-6 text-center">
                   <span className="text-[#BF9040]">Chef&apos;s Highlights</span>
                 </h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {filteredDishes
-                    .filter(dish => isDishSpecial(dish) || isDishPopular(dish))
-                    .slice(0, 4)
-                    .map((dish, index) => (
-                      <DishCard
-                        key={`featured-${dish.id}`}
-                        dish={dish}
-                        index={index}
-                        isSpecial={isDishSpecial(dish)}
-                        isPopular={isDishPopular(dish)}
-                        variant="featured"
-                      />
-                    ))}
+                {/* Chef's Highlights Carousel for all sections */}
+                {(() => {
+                  let highlights: { title: string; desc: string; price: string; image: string }[] = [];
+                  let sectionTitle = '';
+                  if (title === 'Grills') {
+                    highlights = [
+                      {
+                        title: "Lamb Chops (4 pcs)",
+                        desc: "Four pieces of juicy, flame-grilled lamb chops, marinated in aromatic spices and cooked until tender with a smoky finish.",
+                        price: "$35.99",
+                        image: "/categories_im/A.png"
+                      },
+                      {
+                        title: "Mixed Grill Platter",
+                        desc: "A delicious trio of tandoori chicken, tender lamb tikka, and succulent shrimp, all grilled to perfection. Served with fragrant basmati rice and a side of fresh garden salad.",
+                        price: "$19.95",
+                        image: "/categories_im/B.png"
+                      },
+                      {
+                        title: "Whole Chicken",
+                        desc: "Juicy whole chicken marinated in spices and grilled to perfection.",
+                        price: "$24.99",
+                        image: "/categories_im/A.png"
+                      },
+                      {
+                        title: "Chicken Wings (20 pcs)",
+                        desc: "Twenty pieces of spicy grilled chicken wings.",
+                        price: "$19.99",
+                        image: "/categories_im/A.png"
+                      }
+                    ];
+                    sectionTitle = "Lamb Chops & Mixed Grill Platter";
+                  } else if (title === 'Indian') {
+                    highlights = [
+                      {
+                        title: "Chicken Vindaloo",
+                        desc: "Very spicy curry with potatoes, glazed onions, garlic, ginger and hot peppers",
+                        price: "$13.95",
+                        image: "/categories_im/indian1.png"
+                      },
+                      {
+                        title: "Lamb Tikka Masala",
+                        desc: "Lamb cooked in a creamy tomato sauce",
+                        price: "$14.95",
+                        image: "/categories_im/indian2.png"
+                      },
+                      {
+                        title: "Lamb Biryani",
+                        desc: "Lamb pieces with saffron-coloured basmati rice",
+                        price: "$16.95",
+                        image: "/categories_im/indian1.png"
+                      },
+                      {
+                        title: "Paneer Masala",
+                        desc: "Homemade cheese cooked in a creamy tomato sauce",
+                        price: "$10.95",
+                        image: "/categories_im/indian2.png"
+                      }
+                    ];
+                    sectionTitle = "Indian Chef's Highlights";
+                  } else if (title === 'Seafood') {
+                    highlights = [
+                      {
+                        title: "Sherbrooke Seafood Platter",
+                        desc: "Greek salad, grilled shrimp (4), salmon (1), grilled octopus, fried calamari",
+                        price: "$70.00",
+                        image: "/categories_im/seafood1.png"
+                      },
+                      {
+                        title: "Grilled Jumbo Shrimps",
+                        desc: "Grilled Jumbo shrimps",
+                        price: "$35.99",
+                        image: "/categories_im/seafood2.png"
+                      },
+                      {
+                        title: "Salmon",
+                        desc: "Salmon",
+                        price: "$22.99",
+                        image: "/categories_im/seafood1.png"
+                      },
+                      {
+                        title: "Sherbrooke Land & Sea Platter",
+                        desc: "Amira's Special: Greek salad, chicken breast fillet, filet mignon skewer (1), lamb chop (4), grilled shrimp (4), salmon (1), fried calamari",
+                        price: "$115.00",
+                        image: "/categories_im/seafood1.png"
+                      }
+                    ];
+                    sectionTitle = "Seafood Chef's Highlights";
+                  }
+                  // Carousel for first 2
+                  const carouselItems = highlights.slice(0, 2);
+                  // Static cards for any additional highlights
+                  const staticItems = highlights.slice(2);
+                  return (
+                    <>
+                      {carouselItems.length > 0 && (
+                        <CarouselHighlights sectionTitle={sectionTitle} highlights={carouselItems} />
+                      )}
+                      {staticItems.length > 0 && (
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+                          {staticItems.map((item, idx) => (
+                            <DishCard
+                              key={`static-highlight-${item.title}`}
+                              dish={{ id: idx, name: item.title, description: item.desc, price: item.price }}
+                              index={idx}
+                              isSpecial={true}
+                              isPopular={true}
+                              variant="featured"
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  );
+                })()}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+                  {title === 'Grills' ? (
+                    // For Grills, show dishes 2-4 (since 0-1 are in carousel)
+                    filteredDishes
+                      .filter(dish => isDishSpecial(dish) || isDishPopular(dish))
+                      .slice(2, 4)
+                      .map((dish, index) => (
+                        <DishCard
+                          key={`featured-${dish.id}`}
+                          dish={dish}
+                          index={index + 2}
+                          isSpecial={isDishSpecial(dish)}
+                          isPopular={isDishPopular(dish)}
+                          variant="featured"
+                        />
+                      ))
+                  ) : (
+                    // For other sections (Indian, Seafood), show all 4 dishes
+                    filteredDishes
+                      .filter(dish => isDishSpecial(dish) || isDishPopular(dish))
+                      .slice(0, 4)
+                      .map((dish, index) => (
+                        <DishCard
+                          key={`featured-${dish.id}`}
+                          dish={dish}
+                          index={index}
+                          isSpecial={isDishSpecial(dish)}
+                          isPopular={isDishPopular(dish)}
+                          variant="featured"
+                        />
+                      ))
+                  )}
                 </div>
               </div>
             )}
@@ -302,3 +438,5 @@ export default function MenuContainer({
     </div>
   );
 } 
+
+ 

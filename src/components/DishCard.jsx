@@ -51,25 +51,34 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
           </div>
 
           <div className="relative z-10">
+            {/* Show image only for Lamb Chops (4 pcs) in featured variant, under title, full width */}
             <div className="mb-6">
               <h3 className="text-3xl font-bold text-white mb-3 group-hover:text-[#BF9040] transition-colors duration-300">
                 {dish.name}
               </h3>
-              <div className="w-16 h-1 bg-gradient-to-r from-[#BF9040] to-transparent rounded-full" />
+              <div className="w-16 h-1 bg-gradient-to-r from-[#BF9040] to-transparent rounded-full mb-4" />
+              {isFeatured && dish.name === "Lamb Chops (4 pcs)" && (
+                <div className="w-full flex justify-center mb-4">
+                  <img
+                    src="/categories_im/Lamb chops.webp"
+                    alt="Lamb Chops"
+                    className="rounded-2xl shadow-2xl border-4 border-[#BF9040]/80 w-full max-w-xl h-72 object-cover object-center"
+                    style={{ background: '#222' }}
+                  />
+                </div>
+              )}
             </div>
-
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
               {dish.description}
             </p>
-
-                         <div className="flex justify-start">
-               <motion.span
-                 animate={{ scale: isHovered ? 1.1 : 1 }}
-                 className="text-4xl font-bold text-[#BF9040]"
-               >
-                 {dish.price}
-               </motion.span>
-             </div>
+            <div className="flex justify-start">
+              <motion.span
+                animate={{ scale: isHovered ? 1.1 : 1 }}
+                className="text-4xl font-bold text-[#BF9040]"
+              >
+                {dish.price}
+              </motion.span>
+            </div>
           </div>
         </div>
       </motion.div>
