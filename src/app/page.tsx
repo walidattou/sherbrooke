@@ -372,12 +372,12 @@ export default function Home() {
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Phone</h4>
-                    <p className="text-gray-600">(514) 555-0123</p>
+                    <p className="text-gray-600">(438) 373-4444</p>
                   </div>
                   
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Email</h4>
-                    <p className="text-gray-600">reservations@sherbrookegrill.com</p>
+                    <p className="text-gray-600">sherbrookegrillpizza@gmail.com</p>
                   </div>
                   
                   <div>

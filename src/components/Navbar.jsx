@@ -122,7 +122,7 @@ export default function Navbar() {
 
               {/* Call Button */}
               <motion.a
-                href="tel:15144344466"
+                href="tel:14383734444"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-green-700 flex items-center justify-center space-x-2 w-32">
@@ -212,7 +212,7 @@ export default function Navbar() {
 
               {/* Call Button Mobile */}
               <motion.a
-                href="tel:15144344466"
+                href="tel:14383734444"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-green-700 w-48 space-x-2"

@@ -160,20 +160,38 @@ export default function ContactForm({ formType }: ContactFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('Form submitted!', formData);
     
     if (!validateForm()) {
+      console.log('Validation failed!', errors);
       return;
     }
 
+    console.log('Validation passed, submitting...');
     setIsSubmitting(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      // Send reservation data to API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log('API response:', response.status);
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit reservation');
+      }
+
+      console.log('Reservation submitted successfully!');
       setSubmitSuccess(true);
     } catch (error) {
       console.error("Submission error:", error);
+      alert('Failed to submit reservation. Please try again or call us directly.');
     } finally {
       setIsSubmitting(false);
     }
@@ -191,7 +209,7 @@ export default function ContactForm({ formType }: ContactFormProps) {
             <Calendar className="w-8 h-8 text-green-600" />
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-2">Reservation Submitted!</h3>
-          <p className="text-gray-600">We'll confirm your reservation within 2 hours.</p>
+          <p className="text-gray-600">We'll confirm your reservation as soon as possible.</p>
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
@@ -391,11 +409,12 @@ export default function ContactForm({ formType }: ContactFormProps) {
           </div>
 
           {/* Submit Button */}
-          <div className="pt-4 mt-auto">
+          <div className="pt-4 mt-auto relative z-10">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-6 py-3 bg-gradient-to-r from-[#BF9040] to-[#A67A35] text-white rounded-lg hover:from-[#A67A35] hover:to-[#8F6B2E] transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              onClick={() => console.log('Button clicked!')}
+              className="w-full px-6 py-3 bg-gradient-to-r from-[#BF9040] to-[#A67A35] text-white rounded-lg hover:from-[#A67A35] hover:to-[#8F6B2E] transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
             >
               {isSubmitting ? (
                 <>

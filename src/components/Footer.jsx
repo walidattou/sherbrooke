@@ -41,11 +41,11 @@ export default function Footer() {
                 <span>5868 rue Sherbrooke O, Montreal, QC H4A 1X5</span>
               </motion.a>
               <motion.a
-                href="tel:5144344466"
+                href="tel:14383734444"
                 whileHover={{ scale: 1.02 }}
                 className="flex items-center hover:text-[#BF9040] transition-colors duration-200 cursor-pointer">
                 <Phone size={18} className="mr-2 text-[#BF9040]" />
-                <span>514.434.4466</span>
+                <span>438.373.4444</span>
               </motion.a>
               <motion.a
                 href="mailto:info@sherbrookegrill.ca"
@@ -77,7 +77,7 @@ export default function Footer() {
               </motion.button>
 
               <motion.a
-                href="https://wa.me/15144344466"
+                href="https://wa.me/14383734444"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
