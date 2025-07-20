@@ -91,7 +91,7 @@ export default function Navbar() {
                 href="#"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-black text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-gray-800 flex items-center justify-center space-x-2 w-32">
+                className="bg-black text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-gray-800 flex items-center justify-center space-x-2 w-32 cursor-pointer">
                 <Image
                   src="/uber-eats.png"
                   alt="Uber Eats"
@@ -107,7 +107,7 @@ export default function Navbar() {
                 href="#"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-red-700 flex items-center justify-center space-x-2 w-32">
+                className="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-red-700 flex items-center justify-center space-x-2 w-32 cursor-pointer">
                 <div className="bg-white p-0.5 rounded flex items-center justify-center w-5 h-5">
                   <Image
                     src="/doorDash.png"
@@ -125,7 +125,7 @@ export default function Navbar() {
                 href="tel:14383734444"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-green-700 flex items-center justify-center space-x-2 w-32">
+                className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-green-700 flex items-center justify-center space-x-2 w-32 cursor-pointer">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
@@ -137,7 +137,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-3 rounded-lg shadow-lg transition-all duration-200">
+            className="md:hidden p-3 rounded-lg shadow-lg transition-all duration-200 cursor-pointer">
             {isOpen ? <X size={24} className="text-white" /> : <Menu size={24} className="text-white" />}
           </button>
         </div>
@@ -179,7 +179,7 @@ export default function Navbar() {
                 href="#"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-black text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-gray-800 w-48 space-x-2"
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-gray-800 w-48 space-x-2 cursor-pointer"
                 onClick={() => setIsOpen(false)}>
                 <Image
                   src="/uber-eats.png"
@@ -196,7 +196,7 @@ export default function Navbar() {
                 href="#"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-red-700 w-48 space-x-2"
+                className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-red-700 w-48 space-x-2 cursor-pointer"
                 onClick={() => setIsOpen(false)}>
                 <div className="bg-white p-0.5 rounded flex items-center justify-center w-6 h-6">
                   <Image
@@ -215,7 +215,7 @@ export default function Navbar() {
                 href="tel:14383734444"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-green-700 w-48 space-x-2"
+                className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center hover:bg-green-700 w-48 space-x-2 cursor-pointer"
                 onClick={() => setIsOpen(false)}>
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />

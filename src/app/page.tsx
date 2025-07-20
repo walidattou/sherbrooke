@@ -89,7 +89,7 @@ export default function Home() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#BF9040] hover:bg-[#A67A35] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 group">
+              className="bg-[#BF9040] hover:bg-[#A67A35] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer">
               Order on Uber Eats
               <ExternalLink
                 size={20}
@@ -100,7 +100,7 @@ export default function Home() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-[#BF9040] text-[#BF9040] hover:bg-[#BF9040] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 group">
+              className="bg-transparent border-2 border-[#BF9040] text-[#BF9040] hover:bg-[#BF9040] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer">
               Order on DoorDash
               <ExternalLink
                 size={20}
@@ -217,7 +217,7 @@ export default function Home() {
                 className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link
                   href="/about"
-                  className="group inline-flex items-center bg-[#BF9040] hover:bg-[#A67A35] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                  className="group inline-flex items-center bg-[#BF9040] hover:bg-[#A67A35] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 cursor-pointer">
                   Meet Our Chef
                   <ArrowRight
                     size={20}
@@ -227,7 +227,7 @@ export default function Home() {
 
                 <Link
                   href="#menu"
-                  className="group inline-flex items-center bg-transparent border-2 border-[#BF9040] text-[#BF9040] hover:bg-[#BF9040] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                  className="group inline-flex items-center bg-transparent border-2 border-[#BF9040] text-[#BF9040] hover:bg-[#BF9040] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 cursor-pointer">
                   Explore Our Menu
                   <ArrowRight
                     size={20}
@@ -273,7 +273,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}>
             <Link
               href="/about"
-              className="inline-flex items-center bg-[#BF9040] hover:bg-[#A67A35] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 group">
+              className="inline-flex items-center bg-[#BF9040] hover:bg-[#A67A35] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 group cursor-pointer">
               Explore Our Vision
               <ArrowRight
                 size={20}
@@ -372,12 +372,24 @@ export default function Home() {
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Phone</h4>
-                    <p className="text-gray-600">(438) 373-4444</p>
+                    <a 
+                      href="tel:14383734444" 
+                      className="text-gray-600 hover:text-[#BF9040] transition-colors duration-200 cursor-pointer relative z-10"
+                      onClick={() => console.log('Phone clicked!')}
+                    >
+                      (438) 373-4444
+                    </a>
                   </div>
                   
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Email</h4>
-                    <p className="text-gray-600">sherbrookegrillpizza@gmail.com</p>
+                    <a 
+                      href="mailto:sherbrookegrillpizza@gmail.com" 
+                      className="text-gray-600 hover:text-[#BF9040] transition-colors duration-200 cursor-pointer relative z-10"
+                      onClick={() => console.log('Email clicked!')}
+                    >
+                      sherbrookegrillpizza@gmail.com
+                    </a>
                   </div>
                   
                   <div>
@@ -435,21 +447,38 @@ export default function Home() {
               Order your favorite dishes for delivery or pickup
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-[#BF9040] hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2">
+                className="bg-white text-[#BF9040] hover:bg-gray-100 px-6 py-2 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer text-sm">
+                Reserve Now
+                <Calendar size={16} />
+              </motion.button>
+
+              <motion.a
+                href="tel:14383734444"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-green-700 flex items-center justify-center gap-2 cursor-pointer text-sm">
+                Call Now
+                <Phone size={16} />
+              </motion.a>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-black text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-gray-800 flex items-center justify-center space-x-2 cursor-pointer text-sm">
                 Order on Uber Eats
-                <ExternalLink size={20} />
+                <ExternalLink size={16} />
               </motion.button>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#BF9040] px-8 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2">
+                className="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 hover:bg-red-700 flex items-center justify-center space-x-2 cursor-pointer text-sm">
                 Order on DoorDash
-                <ExternalLink size={20} />
+                <ExternalLink size={16} />
               </motion.button>
             </div>
           </motion.div>
