@@ -4,9 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, User, Mail, Phone, Users, MessageSquare } from "lucide-react";
 
-interface ContactFormProps {
-  formType: "reservation" | "contact";
-}
+
 
 interface FormData {
   firstName: string;
@@ -29,7 +27,7 @@ interface FormErrors {
   guests?: string;
 }
 
-export default function ContactForm({ formType }: ContactFormProps) {
+export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -209,7 +207,7 @@ export default function ContactForm({ formType }: ContactFormProps) {
             <Calendar className="w-8 h-8 text-green-600" />
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-2">Reservation Submitted!</h3>
-          <p className="text-gray-600">We'll confirm your reservation as soon as possible.</p>
+          <p className="text-gray-600">We&apos;ll confirm your reservation as soon as possible.</p>
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -9,7 +9,7 @@ import ContactForm from "../components/models/ContactModel";
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const [isReservationModalOpen, setIsReservationModalOpen] = useState(false);
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
@@ -414,7 +414,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:col-span-2 h-full">
-              <ContactForm formType="reservation" />
+              <ContactForm />
             </motion.div>
           </div>
         </div>
