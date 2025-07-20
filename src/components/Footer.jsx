@@ -52,7 +52,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.02 }}
                 className="flex items-center hover:text-[#BF9040] transition-colors duration-200 cursor-pointer">
                 <Mail size={18} className="mr-2 text-[#BF9040]" />
-                <span>info@sherbrookegrill.ca</span>
+                <span>sherbrookegrillpizza@gmail.com</span>
               </motion.a>
               <div className="flex items-center">
                 <Clock size={18} className="mr-2 text-[#BF9040]" />

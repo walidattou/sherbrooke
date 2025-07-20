@@ -1,13 +1,15 @@
 "use client";
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ExternalLink, ArrowRight, Flame, ChevronDown } from "lucide-react";
+import { ExternalLink, ArrowRight, Flame, ChevronDown, Phone, Calendar } from "lucide-react";
+import ContactForm from "../components/models/ContactModel";
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [isReservationModalOpen, setIsReservationModalOpen] = useState(false);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start'],
@@ -329,6 +331,79 @@ export default function Home() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/*Reserve a table Section*/}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative z-20">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#BF9040]/5 to-transparent"></div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Reserve Your <span className="text-[#BF9040]">Table</span>
+            </h2>
+            <p className="text-xl text-gray-600">
+              Experience the perfect blend of tradition and innovation
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Contact Information */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-1 flex flex-col h-full">
+              
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 mb-8 flex-1">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 bg-[#BF9040] rounded-full flex items-center justify-center">
+                    <Phone className="w-4 h-4 text-white" />
+                  </div>
+                  Contact Information
+                </h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Phone</h4>
+                    <p className="text-gray-600">(514) 555-0123</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Email</h4>
+                    <p className="text-gray-600">reservations@sherbrookegrill.com</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Special Requests</h4>
+                    <p className="text-gray-600">For special occasions, dietary restrictions, or large groups, please call us directly.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#BF9040] to-[#A67A35] rounded-2xl p-8 text-white">
+                <h3 className="text-2xl font-bold mb-4">Reservation Policies</h3>
+                <ul className="space-y-2 text-white/90">
+                  <li>• Reservations held for 15 minutes past booking time</li>
+                  <li>• Cancellations accepted up to 1 hour before</li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Reservation Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:col-span-2 h-full">
+              <ContactForm formType="reservation" />
+            </motion.div>
           </div>
         </div>
       </section>
