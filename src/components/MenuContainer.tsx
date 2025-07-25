@@ -237,45 +237,34 @@ export default function MenuContainer({
                         price: "$14.95",
                         image: "/categories_im/indian2.png"
                       },
-                      {
-                        title: "Lamb Biryani",
-                        desc: "Lamb pieces with saffron-coloured basmati rice",
-                        price: "$16.95",
-                        image: "/categories_im/indian1.png"
-                      },
-                      {
-                        title: "Paneer Masala",
-                        desc: "Homemade cheese cooked in a creamy tomato sauce",
-                        price: "$10.95",
-                        image: "/categories_im/indian2.png"
-                      }
+            
                     ];
                     sectionTitle = "Indian Chef's Highlights";
                   } else if (title === 'Seafood') {
                     highlights = [
                       {
-                        title: "Sherbrooke Seafood Platter",
-                        desc: "Greek salad, grilled shrimp (4), salmon (1), grilled octopus, fried calamari",
-                        price: "$70.00",
+                        title: "Mediterranean Seafood (1 person)",
+                        desc: "Mediterranean sea bass",
+                        price: "$35.99",
                         image: "/categories_im/seafood1.png"
                       },
                       {
-                        title: "Grilled Jumbo Shrimps",
-                        desc: "Grilled Jumbo shrimps",
-                        price: "$35.99",
+                        title: "Fillet of Sole",
+                        desc: "Fillet of sole",
+                        price: "$17.95",
                         image: "/categories_im/seafood2.png"
                       },
                       {
-                        title: "Salmon",
-                        desc: "Salmon",
-                        price: "$22.99",
+                        title: "Mix Grill Platter",
+                        desc: "Selection of chicken, lamb chop, shrimps, mushrooms and peppers",
+                        price: "$59.95",
                         image: "/categories_im/seafood1.png"
                       },
                       {
-                        title: "Sherbrooke Land & Sea Platter",
-                        desc: "Amira's Special: Greek salad, chicken breast fillet, filet mignon skewer (1), lamb chop (4), grilled shrimp (4), salmon (1), fried calamari",
-                        price: "$115.00",
-                        image: "/categories_im/seafood1.png"
+                        title: "Shrimps Biryani",
+                        desc: "Shrimp with saffron-coloured basmati rice",
+                        price: "$17.95",
+                        image: "/categories_im/seafood2.png"
                       }
                     ];
                     sectionTitle = "Seafood Chef's Highlights";
@@ -323,8 +312,19 @@ export default function MenuContainer({
                         />
                       ))
                   ) : (
-                    // For other sections (Indian, Seafood), show all 4 dishes
+                    // For other sections (Indian, Seafood), show all 4 dishes, but filter out highlights for Indian and specific items for Seafood
                     filteredDishes
+                      .filter(dish => {
+                        if (title === 'Indian') {
+                          // Do not filter out any dishes for Indian section
+                          return true;
+                        }
+                        if (title === 'Seafood') {
+                          // Remove Grilled Jumbo Shrimps, Grilled Jumbo Shrimps (4 pcs), and Sherbrooke Seafood Platter
+                          return !["Grilled Jumbo Shrimps", "Grilled Jumbo Shrimps (4 pcs)", "Sherbrooke Seafood Platter"].includes(dish.name);
+                        }
+                        return true;
+                      })
                       .filter(dish => isDishSpecial(dish) || isDishPopular(dish))
                       .slice(0, 4)
                       .map((dish, index) => (
@@ -422,7 +422,7 @@ export default function MenuContainer({
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {dishes
-                .filter(dish => isDishSpecial(dish))
+                .filter(dish => isDishSpecial(dish) && dish.name !== "Sherbrooke Seafood Platter")
                 .slice(0, 3)
                 .map((dish) => (
                   <div key={dish.id} className="p-4 bg-gray-800/50 rounded-lg border border-[#BF9040]/30">

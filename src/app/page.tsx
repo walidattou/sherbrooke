@@ -20,16 +20,10 @@ export default function Home() {
 
   const categories = [
     {
-      title: "Grills",
-      href: "/grills",
-      imagePath: "/images/categories/Grills.png",
-      bgColor: "from-red-500 to-orange-600",
-    },
-    {
-      title: "Pasta And Pizza",
-      href: "/pastapizza",
-      imagePath: "/images/categories/Pasta.png",
-      bgColor: "from-yellow-500 to-orange-500",
+      title: "Indian Specials",
+      href: "/indian",
+      imagePath: "/images/categories/Indian Specials food.png",
+      bgColor: "from-purple-500 to-pink-600",
     },
     {
       title: "Seafood",
@@ -38,10 +32,16 @@ export default function Home() {
       bgColor: "from-blue-500 to-teal-600",
     },
     {
-      title: "Indian Specials",
-      href: "/indian",
-      imagePath: "/images/categories/Indian Specials food.png",
-      bgColor: "from-purple-500 to-pink-600",
+      title: "Pasta And Pizza",
+      href: "/pastapizza",
+      imagePath: "/images/categories/Pasta.png",
+      bgColor: "from-yellow-500 to-orange-500",
+    },
+    {
+      title: "Grills",
+      href: "/grills",
+      imagePath: "/images/categories/Grills.png",
+      bgColor: "from-red-500 to-orange-600",
     },
   ];
 
