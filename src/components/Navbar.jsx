@@ -52,7 +52,7 @@ export default function Navbar() {
               } transition-all duration-300 shadow-lg`}>
               <Image
                 src="/Logo.jpg"
-                alt="Sherbrooke Grill & Pizza Logo"
+                alt="Sherbrooke Grill & Pizza /Resto Cabasyl Logo"
                 width={120}
                 height={60}
                 className="h-12 w-auto object-contain"

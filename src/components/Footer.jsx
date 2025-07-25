@@ -17,7 +17,7 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}>
             <h3 className="text-xl font-bold mb-4">
-              Sherbrooke <span className="text-[#BF9040]">Grill & Pizza</span>
+              Sherbrooke <span className="text-[#BF9040]">Grill & Pizza /Resto Cabasyl</span>
             </h3>
             <p className="text-gray-400 mb-4">
               {t("heroSubtitle")}
@@ -52,7 +52,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.02 }}
                 className="flex items-center hover:text-[#BF9040] transition-colors duration-200 cursor-pointer">
                 <Mail size={18} className="mr-2 text-[#BF9040]" />
-                <span>sherbrookegrillpizza@gmail.com</span>
+                <span>sherbrookegrillandpizza@gmail.com</span>
               </motion.a>
               <div className="flex items-center">
                 <Clock size={18} className="mr-2 text-[#BF9040]" />

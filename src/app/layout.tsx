@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sherbrooke Grill & Pizza - Indian Fusion Restaurant in Montreal",
+  title: "Sherbrooke Grill & Pizza /Resto Cabasyl - Indian Fusion Restaurant in Montreal",
   description:
     "Experience the perfect fusion of Indian cuisine, grilled specialties, fresh seafood, and authentic pasta dishes in the heart of Montreal.",
 };

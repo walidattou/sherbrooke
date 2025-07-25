@@ -17,7 +17,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl font-bold mb-6">
-            {t("welcome")} <span className="text-[#BF9040]">Sherbrooke Grill & Pizza</span>
+            {t("welcome")} <span className="text-[#BF9040]">Sherbrooke Grill & Pizza /Resto Cabasyl</span>
           </motion.h1>
 
           <motion.p

@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
           
           <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
             <p style="color: #666; font-size: 14px;">
-              This reservation was submitted from the Sherbrooke Grill & Pizza website.
+              This reservation was submitted from the Sherbrooke Grill & Pizza /Resto Cabasyl website.
             </p>
           </div>
         </div>
