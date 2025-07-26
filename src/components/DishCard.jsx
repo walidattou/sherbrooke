@@ -127,12 +127,12 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
                   ))}
                 </div>
               ) : (
-                <motion.span
-                  animate={{ scale: isHovered ? 1.1 : 1 }}
-                  className="text-4xl font-bold text-[#BF9040]"
-                >
+              <motion.span
+                animate={{ scale: isHovered ? 1.1 : 1 }}
+                className="text-4xl font-bold text-[#BF9040]"
+              >
                   {priceInfo.price}
-                </motion.span>
+              </motion.span>
               )}
             </div>
           </div>
@@ -183,7 +183,7 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
                 ) : (
                   <span className="text-xl font-bold text-[#BF9040]">
                     {priceInfo.price}
-                  </span>
+              </span>
                 )}
               </div>
             </div>
@@ -192,12 +192,12 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
               {dish.description}
             </p>
 
-            <div className="flex items-center">
-              <span className="text-xs text-gray-500 flex items-center gap-1">
-                <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-                Available
-              </span>
-            </div>
+                         <div className="flex items-center">
+               <span className="text-xs text-gray-500 flex items-center gap-1">
+                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                 Available
+               </span>
+             </div>
           </div>
         </div>
       </motion.div>
@@ -273,16 +273,16 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
                   ))}
                 </div>
               ) : (
-                <span className="text-2xl font-bold text-[#BF9040] relative">
+              <span className="text-2xl font-bold text-[#BF9040] relative">
                   {priceInfo.price}
-                  {isHovered && (
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className="absolute -inset-2 bg-[#BF9040]/20 rounded-lg blur -z-10"
-                    />
-                  )}
-                </span>
+                {isHovered && (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute -inset-2 bg-[#BF9040]/20 rounded-lg blur -z-10"
+                  />
+                )}
+              </span>
               )}
             </motion.div>
           </div>
@@ -291,20 +291,20 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
             {dish.description}
           </p>
 
-          <div className="flex items-center gap-4 text-sm text-gray-500">
-            <span className="flex items-center gap-1">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              Available
-            </span>
-            
-            <span className="text-gray-400">
-            {dish.name.toLowerCase().includes('chicken') && 'Chicken'}
-            {dish.name.toLowerCase().includes('lamb') && 'Lamb'}
-            {dish.name.toLowerCase().includes('beef') && 'Beef'}
-            {(dish.name.toLowerCase().includes('fish') || dish.name.toLowerCase().includes('salmon') || dish.name.toLowerCase().includes('shrimp')) && 'Seafood'}
-            {dish.name.toLowerCase().includes('vegetable') && 'Vegetarian'}
-            </span>
-          </div>
+                      <div className="flex items-center gap-4 text-sm text-gray-500">
+              <span className="flex items-center gap-1">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                Available
+              </span>
+              
+              <span className="text-gray-400">
+              {dish.name.toLowerCase().includes('chicken') && 'Chicken'}
+              {dish.name.toLowerCase().includes('lamb') && 'Lamb'}
+              {dish.name.toLowerCase().includes('beef') && 'Beef'}
+              {(dish.name.toLowerCase().includes('fish') || dish.name.toLowerCase().includes('salmon') || dish.name.toLowerCase().includes('shrimp')) && 'Seafood'}
+              {dish.name.toLowerCase().includes('vegetable') && 'Vegetarian'}
+              </span>
+            </div>
         </div>
 
         <motion.div
