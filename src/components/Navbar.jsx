@@ -46,14 +46,14 @@ export default function Navbar() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className={`p-2 rounded-lg flex items-center justify-center ${isScrolled
+            <div className={`p-2 rounded-lg flex items-center justify-center w-12 h-12 ${isScrolled
               ? 'bg-white/95'
               : 'bg-white/90'
               } transition-all duration-300 shadow-lg`}>
               <img
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="Sherbrooke Grill & Pizza /Resto Cabasyl Logo"
-                className="h-12 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </div>
           </Link>
