@@ -8,7 +8,7 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
 
   // Parse price to handle multiple options
   const parsePrice = (priceString) => {
-    // Check if price contains multiple options (like "small, regular, large")
+    // Check if price contains multiple options (like "small, regular, large" or "1 person, 2 persons")
     if (priceString.includes('(') && priceString.includes(')')) {
       const parts = priceString.split(',');
       if (parts.length > 1) {

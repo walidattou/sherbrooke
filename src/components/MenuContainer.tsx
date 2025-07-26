@@ -255,9 +255,9 @@ export default function MenuContainer({
                   } else if (title === 'Seafood') {
                     highlights = [
                       {
-                        title: "Mediterranean Seafood (1 person)",
+                        title: "Mediterranean Sea Bass",
                         desc: "Mediterranean sea bass",
-                        price: "$35.99",
+                        price: "$35.99 (1 person), $54.99 (2 persons)",
                         image: "/categories_im/sea-bass.png"
                       },
                       {

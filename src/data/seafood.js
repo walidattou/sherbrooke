@@ -164,14 +164,14 @@ export const seafoodData = [
     id: 25,
     name: "Salmon",
     description: "Salmon",
-    price: "$22.99 (single), $35.99 (1 person), $54.99 (2 persons)",
+    price: "$22.99 ",
     category: "Fish & Seafood",
   },
   {
     id: 26,
     name: "Mediterranean sea bass",
     description: "Mediterranean sea bass",
-    price: "$54.99",
+    price: "$35.99 (1 person), $54.99 (2 persons)",
     category: "Fish & Seafood",
   },
   {
