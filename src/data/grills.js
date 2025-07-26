@@ -1,296 +1,626 @@
 export const grillsData = [
-  {
+    {
     id: 1,
-    name: "Grilled Chicken Filet",
-    description: "Tender grilled chicken filet",
-    price: "$22.99"
-  },
-  {
+      name: "10 Chicken wings",
+      description: "Served with choice of sauce: Ranch or BBQ or spicy",
+      price: "$9.99",
+      category: "Chicken Wings",
+    },
+    {
     id: 2,
-    name: "Chicken Brochette (2 pcs)",
-    description: "Skewered and grilled chicken pieces",
-    price: "$26.99"
-  },
-  {
+      name: "20 Chicken wings",
+      description: "Served with choice of sauce: Ranch or BBQ or spicy",
+      price: "$18.99",
+      category: "Chicken Wings",
+    },
+    {
     id: 3,
-    name: "Lamb Chops (4 pcs)",
-    description: "Juicy grilled lamb chops",
-    price: "$35.99"
-  },
-  {
+      name: "30 Chicken wings",
+      description: "Served with choice of sauce: Ranch or BBQ or spicy",
+      price: "$25.99",
+      category: "Chicken Wings",
+    },
+    {
     id: 4,
-    name: "Single Lamb Chop",
-    description: "One perfectly grilled lamb chop",
-    price: "$7.99"
-  },
-  {
+      name: "Regular",
+      description: "Made with homemade sauce and fresh cheese curds",
+      price: "$7.99 (small), $10.49 (medium), $12.99 (large)",
+      category: "Poutines",
+    },
+    {
     id: 5,
-    name: "Rib Steak (14 oz)",
-    description: "Premium cut rib steak grilled to perfection",
-    price: "$36.99"
-  },
-  {
+      name: "Grilled chicken",
+      description: "Made with succulent pieces of chicken",
+      price: "$10.49 (small), $12.49 (medium), $15.49 (large)",
+      category: "Poutines",
+    },
+    {
     id: 6,
-    name: "Mix Grill Platter",
-    description: "Selection of chicken, lamb chop, shrimps, mushrooms and peppers",
-    price: "$59.95"
-  },
-  {
+      name: "Au steak",
+      description: "Made with succulent pieces of steak",
+      price: "$11.99 (small), $14.49 (medium), $16.99 (large)",
+      category: "Poutines",
+    },
+    {
     id: 7,
-    name: "Chicken Souvlaki",
-    description: "Traditional Greek-style grilled chicken skewers",
-    price: "$15.99"
-  },
-  {
+      name: "Indienne spéciale",
+      description: "Made with butter chicken",
+      price: "$10.99 (small), $12.99 (medium), $15.99 (large)",
+      category: "Poutines",
+    },
+    {
     id: 8,
-    name: "Grilled Peppers",
-    description: "Fresh peppers grilled to perfection",
-    price: "$9.99"
-  },
-  {
-    id: 9,
-    name: "Grilled Sweet Onions",
-    description: "Caramelized sweet onions grilled for rich flavor",
-    price: "$8.99"
-  },
-  {
-    id: 10,
-    name: "Grilled Vegetables Platter",
-    description: "Assortment of seasonal vegetables grilled to perfection",
-    price: "$29.95"
-  },
-  {
-    id: 11,
-    name: "Grilled Jumbo Shrimps (4 pcs)",
-    description: "Four pieces of jumbo shrimps perfectly grilled",
-    price: "$35.99"
-  },
-  {
-    id: 12,
-    name: "Butter Chicken",
-    description: "Chicken breast pieces roasted and simmered in a creamy sauce",
-    price: "$15.95"
-  },
-  {
-    id: 13,
-    name:  "Chicken Tikka Masala",
-    description: "Chicken breast pieces roasted and simmered in spiced sauce",
-    price: "$14.95"
-  },
-  {
-    id: 14,
-    name: "Chicken Tandoori",
-    description: "Chicken marinated in yogurt and spices, traditionally cooked in tandoor",
-    price: "$16.95"
-  },
-  {
-    id: 15,
-    name: "Chicken tikka",
-    description: "Assortment of seasonal vegetables grilled to perfection",
-    price: "$17.95"
-  },
-  {
-    id: 16,
-    name: "Lamb Tikka ",
-    description: "Spiced lamb pieces, fire-roasted in tandoor. With rice & salad.",
-    price: "18.95"
-  },
-  {
+      name: "Fried chicken special",
+      description: "12 pieces of fried chicken served with sauce and coleslaw",
+      price: "$32.95",
+      category: "Family Specials",
+    },
+    {
     id: 17,
-    name: "Tandoori Shrimp",
-    description: "Spiced jumbo shrimp, clay-oven roasted. Served with rice & salad.",
-    price: "$19.95"
-  },
+      name: "Whole chicken special",
+      description: "Flatbread chicken served with garlic sauce, hummus and pita bread",
+      price: "$17.95",
+      category: "Family Specials",
+    },
   {
     id: 18,
-    name: "Mixed Grill Platter",
-    description: "Tandoori chicken, lamb tikka & shrimp. Served with rice & salad.",
-    price: "$19.95"
+    name: 'Végétarien - Veggie Sub',
+    description: "Green peppers, green olives, Kalamata olives",
+    price: "$9.99 (10\"), $12.99 (14\")",
+    category: "Subs",
   },
   {
     id: 19,
-    name: "1kg Kafta + Whole Chicken",
-    description: "1 kg of kafta with one whole chicken",
-    price: "$53.95",
+    name: 'Pepperoni Sub',
+    description: "Classic pepperoni sub",
+    price: "$10.99 (10\"), $13.99 (14\")",
+    category: "Subs",
   },
   {
     id: 20,
-    name: "1kg Chicken Skewers + Whole Chicken",
-    description: "1 kg of chicken skewers with one whole chicken",
-    price: "$62.95",
+    name: 'Steak et pepperoni Sub',
+    description: "Pepperoni, green peppers",
+    price: "$12.99 (10\"), $16.99 (14\")",
+    category: "Subs",
   },
   {
     id: 21,
-    name: "1kg Mixed + Whole Chicken",
-    description: "1 kg mixed grilled meats with one whole chicken",
-    price: "$64.95",
+    name: 'Poulet - Chicken Sub',
+    description: "Sub with succulent pieces of chicken",
+    price: "$10.99 (10\"), $14.99 (14\")",
+    category: "Subs",
   },
   {
     id: 22,
-    name: "1kg Lamb Skewers + Whole Chicken",
-    description: "1 kg of lamb skewers with one whole chicken",
-    price: "$64.95",
+    name: 'Steak Philly Sub',
+    description: "Classic Philly steak sub",
+    price: "$12.99 (10\"), $15.99 (14\")",
+    category: "Subs",
   },
   {
     id: 23,
-    name: "1kg Lamb Chops + Whole Chicken",
-    description: "1 kg of lamb chops with one whole chicken",
-    price: "$70.95",
-  },
-  {
-    id: 24,
-    name: "1kg Beef Kafta",
-    description: "1 kilogram of seasoned ground beef kafta, grilled to perfection",
-    price: "$29.99"
-  },
-  {
-    id: 25,
-    name: "1kg Beef Skewers",
-    description: "1 kilogram of premium beef cubes on skewers, charcoal-grilled",
-    price: "$32.99"
-  },
-  {
-    id: 26,
-    name: "1kg Chicken Skewers",
-    description: "1 kilogram of marinated chicken skewers, flame-grilled",
-    price: "$33.99"
-  },
-  {
-    id: 27,
-    name: "1kg Mixed Skewers",
-    description: "1 kilogram combination of kafta, chicken and beef skewers",
-    price: "$34.99"
-  },
-  {
-    id: 28,
-    name: "1kg Mixed Lamb Skewers",
-    description: "1 kilogram of premium lamb and mixed meat skewers",
-    price: "$38.99"
+    name: '1 Sub 10" Combo',
+    description:
+      'Choice of pepperoni or steak and pepperoni or extra veggie for Philly or Chicken subs. Includes 1 sub 10", 1 poutine, and 1 drink.',
+    price: "$16.99",
+    category: "Subs Special Combos",
   },
   {
     id: 29,
-    name: "1kg Lamb Chops",
-    description: "1 kilogram of tender lamb chops, grilled with spices",
-    price: "$48.99"
+    name: '2 Subs 7" Combo',
+    description:
+      'Choice of pepperoni or steak and pepperoni or extra veggie for Philly or Chicken subs. Includes 2 subs 7", 2 poutines, and 2 drinks.',
+    price: "$28.99",
+    category: "Subs Special Combos",
   },
   {
     id: 30,
-    name: "1/2kg Beef Kafta",
-    description: "500g of seasoned ground beef kafta, grilled to perfection",
-    price: "$15.99"
+    name: '2 Subs 14" Combo',
+    description:
+      'Choice of pepperoni or steak and pepperoni or extra veggie for Philly or Chicken subs. Includes 2 subs 14", 2 poutines, and 2 drinks.',
+    price: "$44.99",
+    category: "Subs Special Combos",
   },
   {
     id: 31,
-    name: "1/2kg Beef Skewers",
-    description: "500g of premium beef cubes on skewers, charcoal-grilled",
-    price: "$17.99"
+    name: "Beef kafta",
+    description: "Served with salad, garlic sauce, hummus and pita bread",
+    price: "$15.99 (1/2 kg), $29.99 (1 kg)",
+    category: "Grilled Meats by the Kilo",
   },
   {
     id: 32,
-    name: "1/2kg Chicken Skewers",
-    description: "500g of marinated chicken skewers, flame-grilled",
-    price: "$18.99"
+    name: "Beef skewer",
+    description: "Served with salad, garlic sauce, hummus and pita bread",
+    price: "$17.99 (1/2 kg), $32.99 (1 kg)",
+    category: "Grilled Meats by the Kilo",
   },
   {
     id: 33,
-    name: "1/2kg Mixed Skewers",
-    description: "500g combination of kafta, chicken and beef skewers",
-    price: "$18.99"
+    name: "Chicken skewer",
+    description: "Served with salad, garlic sauce, hummus and pita bread",
+    price: "$18.99 (1/2 kg), $33.99 (1 kg)",
+    category: "Grilled Meats by the Kilo",
   },
   {
     id: 34,
-    name: "1/2kg Mixed Lamb Skewers",
-    description: "500g of premium lamb and mixed meat skewers",
-    price: "$20.99"
+    name: "Mix skewer",
+    description: "Kafla, chicken and beef. Served with salad, garlic sauce, hummus and pita bread",
+    price: "$18.99 (1/2 kg), $34.99 (1 kg)",
+    category: "Grilled Meats by the Kilo",
   },
   {
     id: 35,
-    name: "1/2kg Lamb Chops",
-    description: "500g of tender lamb chops, grilled with spices",
-    price: "$25.99"
+    name: "Mix Lamb skewer",
+    description: "Served with salad, garlic sauce, hummus and pita bread",
+    price: "$20.99 (1/2 kg), $38.99 (1 kg)",
+    category: "Grilled Meats by the Kilo",
   },
   {
     id: 36,
-    name: "Kafta Plate",
-    description: "Grilled beef kafta with salad, garlic sauce, and choice of fries or rice",
-    price: "$16.99"
+    name: "Mix Lamb chop",
+    description: "Served with salad, garlic sauce, hummus and pita bread",
+    price: "$25.99 (1/2 kg), $48.99 (1 kg)",
+    category: "Grilled Meats by the Kilo",
   },
   {
     id: 37,
-    name: "Mix Grill Plate",
-    description: "Mixed grilled meats with salad, garlic sauce, and choice of fries or rice",
-    price: "$23.99"
-  },
-  {
-    id: 38,
-    name: "Half Chicken Plate",
-    description: "Grilled half chicken with salad, garlic sauce, and choice of fries or rice",
-    price: "$15.99"
-  },
-  {
-    id: 39,
-    name: "Whole Chicken Plate",
-    description: "Whole grilled chicken with salad, pita, hummus, and garlic sauce",
-    price: "$23.99"
-  },
-  {
-    id: 40,
-    name: "3 Lamb Chops Plate",
-    description: "Three grilled lamb chops with salad, garlic sauce, and choice of fries or rice",
-    price: "$19.99"
-  },
-  {
-    id: 41,
-    name: "2 Grilled Chicken Thighs Plate",
-    description: "Two juicy grilled chicken thighs with salad, garlic sauce, and choice of fries or rice",
-    price: "$13.99"
-  },
-  {
-    id: 42,
-    name: "Sherbrooke #1",
-    description: "House salad, chicken souvlaki (2), kabab (2), merguez (2), sausage (1)",
-    price: "$45.00"
-  },
-  {
-    id: 43,
-    name: "Sherbrooke #2",
-    description: "House salad, souvlaki (2), kabab (1), merguez (2), sausage (1), lamb chops (2)",
-    price: "$55.00"
+    name: "1 kg of Kafta + 1 Whole Chicken",
+    description:
+      "Serves 5 or 6. Served with salad, fries or rice, grilled vegetables, garlic sauce, hummus, and pita bread.",
+    price: "$53.95",
+    category: "Family Grills",
   },
   {
     id: 44,
-    name: "Sherbrooke #3",
-    description: "Greek salad, kabab (2), merguez sausages (2), beef rib steak (1), chicken breast fillet (1), lamb chops (2)",
-    price: "$70.00"
+    name: "1 kg of Chicken Skewers + 1 Whole Chicken",
+    description:
+      "Serves 5 or 6. Served with salad, fries or rice, grilled vegetables, garlic sauce, hummus, and pita bread.",
+    price: "$62.95",
+    category: "Family Grills",
   },
   {
     id: 45,
-    name: "Sherbrooke #4",
-    description: "Amira Special: kabab (2), merguez (2), lamb chops (2), chicken skewer (1), filet mignon skewer (1)",
-    price: "$70.00"
+    name: "1 kg Mixed + 1 Whole Chicken",
+    description:
+      "Serves 5 or 6. Served with salad, fries or rice, grilled vegetables, garlic sauce, hummus, and pita bread.",
+    price: "$64.95",
+    category: "Family Grills",
   },
   {
     id: 46,
-    name: "Sherbrooke Seafood Platter",
-    description: "Greek salad, grilled shrimp (4), salmon (1), grilled octopus, fried calamari",
-    price: "$70.00"
+    name: "1 kg of Lamb Skewers + 1 Whole Chicken",
+    description:
+      "Serves 5 or 6. Served with salad, fries or rice, grilled vegetables, garlic sauce, hummus, and pita bread.",
+    price: "$64.95",
+    category: "Family Grills",
   },
   {
     id: 47,
-    name: "Sherbrooke Land & Sea Platter",
-    description: "Amira's Special: Greek salad, chicken breast fillet, filet mignon skewer (1), lamb chop (4), grilled shrimp (4), salmon (1), fried calamari",
-    price: "$115.00"
+    name: "1 kg of Lamb Chops + 1 Chicken",
+    description:
+      "Serves 5 or 6. Served with salad, fries or rice, grilled vegetables, garlic sauce, hummus, and pita bread.",
+    price: "$70.95",
+    category: "Family Grills",
   },
   {
     id: 48,
-    name: "Hussain Special",
-    description: "Specialia: kabab (2), fried calamari, beef entrecôte, lamb chops (8), braised half chicken, chicken wings (8)",
-    price: "$145.00"
+    name: "Assiette de Kafta - Kafta plate",
+    description: "With salad, garlic sauce and choice of fries or rice",
+    price: "$16.99",
+    category: "Grills Platters",
   },
   {
     id: 49,
+    name: "Assiette Mixte - Mix plate",
+    description: "With salad, garlic sauce and choice of fries or rice",
+    price: "$23.99",
+    category: "Grills Platters",
+  },
+  {
+    id: 50,
+    name: "Assiette de Demi-Poulet - Half chicken plate",
+    description: "With salad, garlic sauce and choice of fries or rice",
+    price: "$15.99",
+    category: "Grills Platters",
+  },
+  {
+    id: 51,
+    name: "Poulet Entier - Whole chicken",
+    description: "With salad, pita, hummus and garlic sauce",
+    price: "$23.99",
+    category: "Grills Platters",
+  },
+  {
+    id: 52,
+    name: "Assiette 3 Côtelettes d'Agneau - Plate of 3 lamb chops",
+    description: "With salad, garlic sauce and choice of fries or rice",
+    price: "$19.99",
+    category: "Grills Platters",
+  },
+  {
+    id: 53,
+    name: "Assiette 2 Cuisses de Poulet Grillée - Plate of 2 grilled chicken thighs",
+    description: "With salad, garlic sauce and choice of fries or rice",
+    price: "$13.99",
+    category: "Grills Platters",
+  },
+  {
+    id: 54,
+    name: "Burger classique - Classic",
+    description: "Classic burger with ketchup and mayo",
+    price: "$6.99",
+    category: "Burgers",
+  },
+  {
+    id: 55,
+    name: "Burger Sherbrooke",
+    description: "Burger with bacon, cheese, lettuce, tomatoes and onions",
+    price: "$9.99",
+    category: "Burgers",
+  },
+  {
+    id: 56,
+    name: "Burger spécial",
+    description: "Special burger with bacon, cheese, lettuce, tomatoes and onions",
+    price: "$10.99",
+    category: "Burgers",
+  },
+  {
+    id: 57,
+    name: "Burger spécial au poulet - Special chicken burger",
+    description: "Special chicken burger with chicken, lettuce, tomatoes and mayo",
+    price: "$7.99",
+    category: "Burgers",
+  },
+  {
+    id: 58,
+    name: "Burger au fromage - Cheeseburger",
+    description: "Cheeseburger",
+    price: "$6.99",
+    category: "Burgers",
+  },
+  {
+    id: 59,
+    name: "Burger végé - Veggie burger",
+    description: "Veggie burger",
+    price: "$5.99",
+    category: "Burgers",
+  },
+  {
+    id: 60,
+    name: "Burger au poulet - Chicken burger",
+    description: "Chicken burger served with fries and drinks",
+    price: "$14.99",
+    category: "Burgers",
+  },
+  {
+    id: 61,
+    name: "Burger au Sherbrooke - Sherbrooke burger",
+    description: "Sherbrooke burger served with fries and drinks",
+    price: "$16.99",
+    category: "Burgers",
+  },
+  {
+    id: 62,
+    name: "Burger Spécial - Special burger",
+    description: "Special burger served with fries and drinks",
+    price: "$18.99",
+    category: "Burgers",
+  },
+  {
+    id: 63,
+    name: "10 ailes de poulet - Chicken wings",
+    description: "10 chicken wings",
+    price: "$14.99",
+    category: "Burgers",
+  },
+  {
+    id: 64,
+    name: "Fries",
+    description: "French fries available in small, regular, and large sizes",
+    price: "$3.49 (small), $6.99 (regular), $9.49 (large)",
+    category: "Fries",
+  },
+  {
+    id: 65,
+    name: "Onion rings",
+    description: "Onion rings",
+    price: "$4.99",
+    category: "Fries",
+  },
+  {
+    id: 66,
+    name: "Beef kefta",
+    description: "Beef kefta sandwich",
+    price: "$9.99 (sandwich), $16.99 (trio)",
+    category: "Sandwichs",
+  },
+  {
+    id: 67,
+    name: "Beef",
+    description: "Beef sandwich",
+    price: "$9.99 (sandwich), $17.99 (trio)",
+    category: "Sandwichs",
+  },
+  {
+    id: 68,
+    name: "Chicken",
+    description: "Chicken sandwich",
+    price: "$10.99 (sandwich), $17.99 (trio)",
+    category: "Sandwichs",
+  },
+  {
+    id: 69,
+    name: "Lamb",
+    description: "Lamb sandwich",
+    price: "$11.99 (sandwich), $18.99 (trio)",
+    category: "Sandwichs",
+  },
+  {
+    id: 70,
+    name: "Chicken pita",
+    description: "Chicken pita sandwich",
+    price: "$5.99 (sandwich), $9.99 (trio)",
+    category: "Sandwichs Pitas",
+  },
+  {
+    id: 71,
+    name: "Beef pita",
+    description: "Beef pita sandwich",
+    price: "$8.99 (sandwich), $12.99 (trio)",
+    category: "Sandwichs Pitas",
+  },
+  {
+    id: 72,
+    name: "Kabab",
+    description: "Kabab pita sandwich",
+    price: "$8.99 (sandwich), $12.99 (trio)",
+    category: "Sandwichs Pitas",
+  },
+  {
+    id: 73,
+    name: "Souvlaki",
+    description: "Souvlaki pita sandwich",
+    price: "$9.99 (sandwich), $13.99 (trio)",
+    category: "Sandwichs Pitas",
+  },
+  {
+    id: 74,
+    name: "Shawarma mixte",
+    description: "Mixed shawarma pita sandwich",
+    price: "$11.99 (sandwich), $15.99 (trio)",
+    category: "Sandwichs Pitas",
+  },
+  {
+    id: 75,
+    name: "Chicken Shawarma",
+    description: "Chicken shawarma bowl",
+    price: "$12.99",
+    category: "Bols Bowls",
+  },
+  {
+    id: 76,
+    name: "Beef Shawarma",
+    description: "Beef shawarma bowl",
+    price: "$14.99",
+    category: "Bols Bowls",
+  },
+  {
+    id: 77,
+    name: "Shish Taouk Shawarma",
+    description: "Shish taouk shawarma bowl",
+    price: "$14.99",
+    category: "Bols Bowls",
+  },
+  {
+    id: 78,
+    name: "Mix meats of your choice",
+    description: "Mixed meats bowl of your choice",
+    price: "$19.99",
+    category: "Bols Bowls",
+  },
+  {
+    id: 79,
+    name: "Whole chicken",
+    description: "Whole chicken with salad, pita, hummus, garlic sauce, and large fries or rice",
+    price: "$29.99",
+    category: "Spécial familial",
+  },
+  {
+    id: 80,
+    name: "Whole chickens",
+    description: "2 whole chickens with salad, pita bread, 2 hummus and 2 garlic sauces, and large fries or rice",
+    price: "$49.99",
+    category: "Spécial familial",
+  },
+  {
+    id: 81,
+    name: "Sherbrooke #1",
+    description: "House salad, chicken souvlaki (2), kabab (2), merguez (2), sausage (1)",
+    price: "$45.00",
+    category: "Sherbrooke Special Platters",
+  },
+  {
+    id: 82,
+    name: "Sherbrooke #2",
+    description: "House salad, souvlaki (2), kabab (1), merguez (2), sausage (1), lamb chops (2)",
+    price: "$55.00",
+    category: "Sherbrooke Special Platters",
+  },
+  {
+    id: 83,
+    name: "Sherbrooke #3",
+    description: "Greek salad, kabab (2), merguez sausages (2), beef rib steak (1), chicken breast fillet (1), lamb chops (2)",
+    price: "$70.00",
+    category: "Sherbrooke Special Platters",
+  },
+  {
+    id: 84,
+    name: "Sherbrooke #4",
+    description: "Amira Special: kabab (2), merguez (2), lamb chops (2), chicken skewer (1), filet mignon skewer (1)",
+    price: "$70.00",
+    category: "Sherbrooke Special Platters",
+  },
+  {
+    id: 85,
+    name: "Sherbrooke Seafood Platter",
+    description: "Greek salad, grilled shrimp (4), salmon (1), grilled octopus, fried calamari",
+    price: "$70.00",
+    category: "Sherbrooke Special Platters",
+  },
+  {
+    id: 86,
+    name: "Sherbrooke Land & Sea Platter",
+    description: "Amira's Special: Greek salad, chicken breast fillet, filet mignon skewer (1), lamb chop (4), grilled shrimp (4), salmon (1), fried calamari",
+    price: "$115.00",
+    category: "Sherbrooke Special Platters",
+  },
+  {
+    id: 87,
+    name: "Hussain Special",
+    description: "Specialia: kabab (2), fried calamari, beef entrecôte, lamb chops (8), braised half chicken, chicken wings (8)",
+    price: "$145.00",
+    category: "Sherbrooke Special Platters",
+  },
+  {
+    id: 88,
     name: "1.2kg Mixed Grills",
     description: "400g souvlaki, 200g kabab, 200g filet mignon, 200g chicken shawarma, 200g beef shawarma",
-    price: "$65.00"
+    price: "$65.00",
+    category: "Mixed Grills",
+  },
+  {
+    id: 89,
+    name: "Hoummous",
+    description: "Hummus dip",
+    price: "$1.75",
+    category: "Extras",
+  },
+  {
+    id: 90,
+    name: "Pita bread",
+    description: "Pita bread",
+    price: "$1.49",
+    category: "Extras",
+  },
+  {
+    id: 91,
+    name: "Choice of sauce",
+    description: "Choice of sauce: Garlic, Ranch, Wing, BBQ, or Poutine",
+    price: "$1.49",
+    category: "Extras",
+  },
+  {
+    id: 92,
+    name: "Jalapeño Poppers (6 mcx/pcs)",
+    description: "6 pieces of jalapeño poppers",
+    price: "$9.99",
+    category: "Appetizers",
+  },
+  {
+    id: 93,
+    name: "Cheesybread",
+    description: "Cheesy bread",
+    price: "$7.99",
+    category: "Appetizers",
+  },
+  {
+    id: 94,
+    name: " Cheese sticks (6pcs) ",
+    description: "6 pieces of cheese sticks",
+    price: "$9.99",
+    category: "Appetizers",
+  },
+  {
+    id: 95,
+    name: "Chicken skewer plate",
+    description: "Chicken skewer plate with salad and choice of fries or rice",
+    price: "$12.95 (1 piece), $23.95 (2 pieces)",
+    category: "Assiettes Combos",
+  },
+  {
+    id: 96,
+    name: "Beef skewer plate",
+    description: "Beef skewer plate with salad and choice of fries or rice",
+    price: "$15.95 (1 piece), $22.95 (2 pieces)",
+    category: "Assiettes Combos",
+  },
+  {
+    id: 97,
+    name: "Chicken pita souvlaki plate",
+    description: "Chicken pita souvlaki plate with fries",
+    price: "$7.99 (plate only), $11.49 (1 pita), $19.99 (2 pitas)",
+    category: "Assiettes Combos",
+  },
+  {
+    id: 98,
+    name: "Hamburger steak",
+    description: "Hamburger steak with fries",
+    price: "$17.95",
+    category: "Assiettes Combos",
+  },
+  {
+    id: 99,
+    name: "Fillet of sole",
+    description: "Fillet of sole with salad and choice of fries or rice",
+    price: "$17.95",
+    category: "Assiettes Combos",
+  },
+  {
+    id: 100,
+    name: "Steak 12 oz",
+    description: "12 oz steak with salad and choice of fries or rice",
+    price: "$26.95",
+    category: "Assiettes Combos",
+  },
+  {
+    id: 101,
+    name: "Fish n'chips",
+    description: "Fish and chips",
+    price: "$15.95",
+    category: "Assiettes Combos",
+  },
+  {
+    id: 102,
+    name: "Club sandwich",
+    description: "Club sandwich with fries",
+    price: "$14.95",
+    category: "Assiettes Combos",
+  },
+  {
+    id: 103,
+    name: "3 pcs of chicken",
+    description: "3 pieces of chicken + fries + sauce + coleslaw + drink",
+    price: "$15.95",
+    category: "Fried chicken",
+  },
+  {
+    id: 104,
+    name: "4 pcs of chicken",
+    description: "4 pieces of chicken + fries + sauce + coleslaw + drink",
+    price: "$17.95",
+    category: "Fried chicken",
+  },
+  {
+    id: 105,
+    name: "6 pcs of chicken",
+    description: "6 pieces of chicken + medium fries + 2 sauces + 2 coleslaw + 2 drinks",
+    price: "$25.95",
+    category: "Fried chicken",
+  },
+  {
+    id: 106,
+    name: "9 pcs of chicken",
+    description: "9 pieces of chicken + medium fries + sauce 8 oz + coleslaw 8 oz + 2L drink",
+    price: "$32.95",
+    category: "Fried chicken",
+  },
+  {
+    id: 107,
+    name: "15 pcs of chicken",
+    description: "15 pieces of chicken + large fries + 2 sauces 8 oz + 2 coleslaw 8 oz + 2L drink",
+    price: "$49.95",
+    category: "Fried chicken",
   },
 ];

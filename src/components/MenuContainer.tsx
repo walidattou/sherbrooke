@@ -14,6 +14,7 @@ interface Dish {
   name: string;
   description: string;
   price: string;
+  category?: string;
 }
 
 interface MenuContainerProps {
@@ -34,7 +35,7 @@ export default function MenuContainer({
   const [searchTerm, setSearchTerm] = useState("");
   const [priceRange, setPriceRange] = useState([0, 70]);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [displayCount, setDisplayCount] = useState(30); // Start with 30 items
+  const [displayCount, setDisplayCount] = useState(45); // Start with 45 items
   const [isLoading, setIsLoading] = useState(true);
 
   // Show loading for a brief moment to improve perceived performance
@@ -210,19 +211,19 @@ export default function MenuContainer({
                         image: "/categories_im/B.png"
                       },
                       {
-                        title: "Whole Chicken",
-                        desc: "Juicy whole chicken marinated in spices and grilled to perfection.",
-                        price: "$24.99",
-                        image: "/categories_im/A.png"
+                        title: "Chicken pita",
+                        desc: "Chicken pita sandwich.",
+                        price: "$5.99",
+                        image: "/categories_im/sandwichs pitas.png"
                       },
                       {
-                        title: "Chicken Wings (20 pcs)",
-                        desc: "Twenty pieces of spicy grilled chicken wings.",
-                        price: "$19.99",
-                        image: "/categories_im/A.png"
+                        title: "Veggie Sub",
+                        desc: "Green peppers, green olives, Kalamata olives.",
+                        price: '$9.99 - "10" / $12.99 - "14"',
+                        image: "/categories_im/veggie sub.png"
                       }
                     ];
-                    sectionTitle = "Lamb Chops & Mixed Grill Platter";
+                    sectionTitle = "Grills Chef's Highlights";
                   } else if (title === 'Indian') {
                     highlights = [
                       {
@@ -237,6 +238,19 @@ export default function MenuContainer({
                         price: "$14.95",
                         image: "/categories_im/indian2.png"
                       },
+                      {
+                        title: "Butter Chicken",
+                        desc: "Chicken breast pieces, roasted and simmered in a creamy sauce",
+                        price: "$15.95",
+                        image: "/categories_im/butter chicken.png"
+                      },
+                      {
+                        title: "Daal Soup",
+                        desc: "Lightly spiced red lentil soup",
+                        price: "$3.95",
+                        image: "/categories_im/daal.png"
+                      },
+            
             
                     ];
                     sectionTitle = "Indian Chef's Highlights";
@@ -246,7 +260,7 @@ export default function MenuContainer({
                         title: "Mediterranean Seafood (1 person)",
                         desc: "Mediterranean sea bass",
                         price: "$35.99",
-                        image: "/categories_im/seafood1.png"
+                        image: "/categories_im/sea-bass.png"
                       },
                       {
                         title: "Fillet of Sole",
@@ -261,18 +275,18 @@ export default function MenuContainer({
                         image: "/categories_im/seafood1.png"
                       },
                       {
-                        title: "Shrimps Biryani",
-                        desc: "Shrimp with saffron-coloured basmati rice",
-                        price: "$17.95",
-                        image: "/categories_im/seafood2.png"
+                        title: "Salmon",
+                        desc: "Salmon",
+                        price: "$22.99 - single",
+                        image: "/categories_im/salmon.png"
                       }
                     ];
                     sectionTitle = "Seafood Chef's Highlights";
                   }
                   // Carousel for first 2
-                  const carouselItems = highlights.slice(0, 2);
+                  const carouselItems = highlights.slice(0, 4);
                   // Static cards for any additional highlights
-                  const staticItems = highlights.slice(2);
+                  const staticItems = highlights.slice(4);
                   return (
                     <>
                       {carouselItems.length > 0 && (
@@ -338,6 +352,69 @@ export default function MenuContainer({
                         />
                       ))
                   )}
+                  
+                  {/* Additional Chef's Special dishes - Show different dishes based on menu type */}
+                  {title === 'Seafood' ? (
+                    <>
+                      <DishCard
+                        key="mediterranean-sea-bass-special"
+                        dish={{ 
+                          id: 997, 
+                          name: "Mediterranean Sea Bass", 
+                          description: "Fresh Mediterranean sea bass grilled to perfection with herbs and lemon.", 
+                          price: "$35.99" 
+                        }}
+                        index={0}
+                        isSpecial={true}
+                        isPopular={false}
+                        variant="featured"
+                      />
+                      
+                      <DishCard
+                        key="grilled-salmon-special"
+                        dish={{ 
+                          id: 996, 
+                          name: "Grilled Salmon", 
+                          description: "Fresh Atlantic salmon grilled with herbs and served with seasonal vegetables.", 
+                          price: "$22.99" 
+                        }}
+                        index={1}
+                        isSpecial={true}
+                        isPopular={false}
+                        variant="featured"
+                      />
+                    </>
+                  ) : title === 'Grills' ? (
+                    <>
+                      <DishCard
+                        key="whole-chicken-special"
+                        dish={{ 
+                          id: 999, 
+                          name: "Whole Chicken", 
+                          description: "Juicy whole chicken marinated in spices and grilled to perfection.", 
+                          price: "$24.99" 
+                        }}
+                        index={0}
+                        isSpecial={true}
+                        isPopular={false}
+                        variant="featured"
+                      />
+                      
+                      <DishCard
+                        key="chicken-wings-special"
+                        dish={{ 
+                          id: 998, 
+                          name: "Chicken Wings (20 pcs)", 
+                          description: "Twenty pieces of spicy grilled chicken wings.", 
+                          price: "$19.99" 
+                        }}
+                        index={1}
+                        isSpecial={true}
+                        isPopular={false}
+                        variant="featured"
+                      />
+                    </>
+                  ) : null}
                 </div>
               </div>
             )}
@@ -347,11 +424,88 @@ export default function MenuContainer({
               <h2 className="text-2xl font-bold text-white text-center mb-6">
                 Complete <span className="text-[#BF9040]">Menu Selection</span>
               </h2>
-              
-              {/* Group dishes by sections for better visual flow */}
-              <div className="columns-1 md:columns-2 xl:columns-3 gap-6 space-y-6">
+              {/* For Indian menu, show Soups, then Curry, then others in order */}
+              {title === 'Indian' ? (
+                (() => {
+                  const categoryOrder = ['Soups', 'Curry'];
+                  // Get all unique categories, but put Soups and Curry first
+                  const allCategories = Array.from(new Set(filteredDishes.map(d => typeof d.category === 'string' ? d.category : null).filter((c): c is string => Boolean(c))));
+                  const orderedCategories = [
+                    ...categoryOrder.filter(cat => allCategories.includes(cat)),
+                    ...allCategories.filter(cat => !categoryOrder.includes(cat))
+                  ];
+                  
+                  // Show all dishes in each category, but limit the number of categories shown
+                  const categoriesToShow = Math.ceil(displayCount / 6); // Show 6 dishes per category
+                  
+                  return (
+                    <div className="space-y-12">
+                      {orderedCategories.filter(Boolean).slice(0, categoriesToShow).map(category => {
+                        const categoryDishes = filteredDishes.filter(d => d.category === category);
+                        
+                                                  return (
+                            <div key={category}>
+                              <h3 className="text-xl font-bold text-[#BF9040] mb-4 mt-8 text-center">{category}</h3>
+                              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                              {categoryDishes.map((dish, index) => (
+                                <div key={dish.id}>
+                                  <DishCard
+                                    dish={dish}
+                                    index={index}
+                                    isSpecial={isDishSpecial(dish)}
+                                    isPopular={isDishPopular(dish)}
+                                    variant="compact"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })()
+              ) : (
+                // Default grouping for other menus
+                (() => {
+                  const categories = Array.from(new Set(filteredDishes.map(d => d.category).filter(Boolean)));
+                  
+                  if (categories.length > 0) {
+                    // Show all dishes in each category, but limit the number of categories shown
+                    const categoriesToShow = Math.ceil(displayCount / 6); // Show 6 dishes per category
+                    
+                    return (
+                      <div className="space-y-12">
+                        {categories.slice(0, categoriesToShow).map(category => {
+                          const categoryDishes = filteredDishes.filter(d => d.category === category);
+                          
+                          return (
+                            <div key={category}>
+                              <h3 className="text-xl font-bold text-[#BF9040] mb-4 mt-8 text-center">{category}</h3>
+                              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                {categoryDishes.map((dish, index) => (
+                                  <div key={dish.id}>
+                                    <DishCard
+                                      dish={dish}
+                                      index={index}
+                                      isSpecial={isDishSpecial(dish)}
+                                      isPopular={isDishPopular(dish)}
+                                      variant="compact"
+                                    />
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    );
+                  } else {
+                    // No categories - show all dishes in a single grid
+                    return (
+                      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {filteredDishes.slice(0, displayCount).map((dish, index) => (
-                  <div key={dish.id} className="break-inside-avoid mb-6">
+                          <div key={dish.id}>
                     <DishCard
                       dish={dish}
                       index={index}
@@ -362,20 +516,29 @@ export default function MenuContainer({
                   </div>
                 ))}
               </div>
+                    );
+                  }
+                })()
+              )}
 
-              {/* Load More Button */}
-              {filteredDishes.length > displayCount && (
+              {/* Load More Button - Only show if there are more dishes to load */}
+              {(() => {
+                const totalDisplayed = Math.min(displayCount, filteredDishes.length);
+                const remaining = filteredDishes.length - totalDisplayed;
+                
+                return remaining > 0 ? (
                 <div className="text-center mt-12">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => setDisplayCount(prev => prev + 30)}
+                      onClick={() => setDisplayCount(prev => prev + 45)}
                     className="px-8 py-4 bg-[#BF9040] hover:bg-[#D4A853] text-black font-bold rounded-xl transition-all duration-200 shadow-lg"
                   >
-                    Load More Dishes ({filteredDishes.length - displayCount} remaining)
+                      Load More Dishes ({remaining} remaining)
                   </motion.button>
                 </div>
-              )}
+                ) : null;
+              })()}
             </div>
           </motion.div>
         ) : (
@@ -421,6 +584,7 @@ export default function MenuContainer({
               and time-honored cooking techniques.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {/* Existing special dishes */}
               {dishes
                 .filter(dish => isDishSpecial(dish) && dish.name !== "Sherbrooke Seafood Platter")
                 .slice(0, 3)
@@ -431,6 +595,25 @@ export default function MenuContainer({
                     <span className="text-lg font-bold text-white">{dish.price}</span>
                   </div>
                 ))}
+              
+              {/* Additional Chef's Special dishes */}
+              <div className="p-4 bg-gray-800/50 rounded-lg border border-[#BF9040]/30">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-1 bg-[#BF9040] text-black text-xs font-bold rounded">Chef's Special</span>
+                </div>
+                <h4 className="font-semibold text-[#BF9040] mb-2">Whole Chicken</h4>
+                <p className="text-sm text-gray-300 mb-2">Juicy whole chicken marinated in spices and grilled to perfection.</p>
+                <span className="text-lg font-bold text-white">$24.99</span>
+              </div>
+              
+              <div className="p-4 bg-gray-800/50 rounded-lg border border-[#BF9040]/30">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-1 bg-[#BF9040] text-black text-xs font-bold rounded">Chef's Special</span>
+                </div>
+                <h4 className="font-semibold text-[#BF9040] mb-2">Chicken Wings (20 pcs)</h4>
+                <p className="text-sm text-gray-300 mb-2">Twenty pieces of spicy grilled chicken wings.</p>
+                <span className="text-lg font-bold text-white">$19.99</span>
+              </div>
             </div>
           </motion.div>
         )}

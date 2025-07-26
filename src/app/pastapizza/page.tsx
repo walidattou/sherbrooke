@@ -244,23 +244,23 @@ export default function PastaPizza() {
                 image: "/categories_im/pizza.png"
               },
               {
-                title: "Beef Greek Pasta",
-                desc: "Greek-style pasta with beef, mushrooms, sun-dried tomatoes, Kalamata olives, feta and arugula",
-                price: "$15.99",
-                image: "/categories_im/pasta.png"
+                title: "Mushroom Pizza",
+                desc: "Mushroom pizza",
+                price: "$14.99",
+                image: "/categories_im/mushroom pizza.png"
               },
               {
-                title: "Butter Chicken 'INDIAN' Pizza",
-                desc: "Butter chicken sauce, chicken, cheese",
-                price: "$19.99",
-                image: "/categories_im/pizza.png"
+                title: "Chicken Greek Pasta",
+                desc: "Greek-style pasta with chicken, mushrooms, sun-dried tomatoes, Kalamata olives, feta and arugula",
+                price: "$15.99",
+                image: "/categories_im/Chicken Greek Pasta.png"
               }
             ];
             
-            // Carousel for first 2
-            const carouselItems = highlights.slice(0, 2);
+            // Carousel for first 4
+            const carouselItems = highlights.slice(0, 4);
             // Static cards for additional highlights
-            const staticItems = highlights.slice(2);
+            const staticItems = highlights.slice(4);
             
             return (
               <>
@@ -289,6 +289,41 @@ export default function PastaPizza() {
                     </div>
                   </div>
                 )}
+
+                {/* Chef's Special Section */}
+                <div className="mb-12">
+                  <h2 className="text-2xl font-bold text-white mb-6 text-center">
+                    <span className="text-[#BF9040]">Chef's</span> Special
+                  </h2>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <DishCard
+                      key="butter-chicken-pizza-special"
+                      dish={{
+                        id: 9998,
+                        name: "Butter Chicken 'INDIAN' Pizza",
+                        description: "Butter chicken sauce, chicken, cheese",
+                        price: "$19.99"
+                      }}
+                      index={0}
+                      isSpecial={true}
+                      isPopular={false}
+                      variant="featured"
+                    />
+                    <DishCard
+                      key="beef-greek-pasta-special"
+                      dish={{
+                        id: 9999,
+                        name: "Beef Greek Pasta",
+                        description: "Greek-style pasta with beef, mushrooms, sun-dried tomatoes, Kalamata olives, feta and arugula",
+                        price: "$15.99"
+                      }}
+                      index={1}
+                      isSpecial={true}
+                      isPopular={false}
+                      variant="featured"
+                    />
+                  </div>
+                </div>
               </>
             );
           })()}

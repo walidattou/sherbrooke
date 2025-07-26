@@ -1,97 +1,223 @@
 export const seafoodData = [
   {
     id: 1,
-    name: "Salmon",
-    description: "Salmon",
-    price: "$22.99"
-  },{
+    name: "Sherbrooke Seafood Platter",
+    description: "Greek salad, grilled shrimp (4), salmon (1), grilled octopus, fried calamari",
+    price: "$70.00",
+    category: "Platters",
+  },
+  {
     id: 2,
-    name: "Mediterranean Seafood (1 person)",
-    description: "Mediterranean sea bass",
-    price: "$35.99"
-  },{
+    name: "Sherbrooke Land & Sea Platter",
+    description: "Amira's Special: Greek salad, chicken breast fillet, filet mignon skewer (1), lamb chop (4), grilled shrimp (4), salmon (1), fried calamari",
+    price: "$115.00",
+    category: "Platters",
+  },
+  {
     id: 3,
-    name: "Mediterranean Seafood (2 person)",
-    description: "Mediterranean sea bass",
-    price: "$54.99"
-  },{
+    name: "Puff pastry Spanokopita",
+    description: "3 pieces of puff pastry Spanokopita with spinach and feta",
+    price: "$9.99",
+    category: "Appetizers",
+  },
+  {
     id: 4,
-    name: "Grilled Jumbo Shrimps",
-    description: "Grilled Jumbo shrimps",
-    price: "$35.99"
-  },{
+    name: "Flamed Saganaki",
+    description: "Fried and flamed kefalograviera cheese",
+    price: "$18.99",
+    category: "Appetizers",
+  },
+  {
     id: 5,
-    name: "Shrimps",
-    description: "Jumbo shrimp",
-    price: "$9.99"
-  },{
+    name: "Calamari",
+    description: "Fried or grilled calamari",
+    price: "$13.99",
+    category: "Appetizers",
+  },
+  {
     id: 6,
-    name: "calamari",
-    description: "calamari fried or grilled",
-    price: "$13.99"
-  },{
+    name: "Grilled peppers",
+    description: "Grilled peppers",
+    price: "$9.99",
+    category: "Appetizers",
+  },
+  {
     id: 7,
-    name: "Shrimps Saag",
-    description: "Shrimps Saag",
-    price: "$13.99"
-  },{
+    name: "Grilled sweet onions",
+    description: "Grilled sweet onions",
+    price: "$8.99",
+    category: "Appetizers",
+  },
+  {
     id: 8,
-    name: "Malai Shrimps",
-    description: "Malai Shrimps",
-    price: "$17.95"
-  },{
+    name: "Grilled vegetables platter",
+    description: "Grilled vegetables platter",
+    price: "$29.95",
+    category: "Appetizers",
+  },
+  {
     id: 9,
-    name: "Shrimp Curry",
-    description: "Shrimps Curry",
-    price: "$16.95"
-  },{
+    name: "Fried greek potatoes with feta",
+    description: "Fried greek potatoes with feta",
+    price: "$8.99",
+    category: "Appetizers",
+  },
+  {
     id: 10,
-    name: "Fillet of Sole",
-    description: "Fillet of sole",
-    price: "$17.95"
-  },{
+    name: "Fried zucchinis and eggplants",
+    description: "Fried zucchinis and eggplants",
+    price: "$15.99",
+    category: "Appetizers",
+  },
+  {
     id: 11,
-    name: "Shrimps Biryani",
-    description: "Shrimp with saffron-coloured basmati rice",
-    price: "$17.95"
-  },{
+    name: "Feta and olives",
+    description: "Feta cheese and olives",
+    price: "$7.99",
+    category: "Appetizers",
+  },
+  {
     id: 12,
-    name: "Saag (Shrimps)",
-    description: "Shrimps cooked with spinach and vegtables",
-    price: "$16.95"
-  },{
+    name: "Stuffed vine leaves (5 pcs)",
+    description: "5 pieces of stuffed vine leaves",
+    price: "$8.99",
+    category: "Appetizers",
+  },
+  {
     id: 13,
-    name: "Grilled Jumbo Shrimps (4 pcs)",
-    description: "Four pieces of jumbo shrimps perfectly grilled",
-    price: "$35.99"
-  },{
+    name: "Tzatziki",
+    description: "Yogurt, cucumbers, garlic, dill, olive oil dip",
+    price: "$8.99",
+    category: "Appetizers",
+  },
+  {
     id: 14,
-    name: "Mix Grill Platter",
-    description: "Selection of chicken, lamb chop, shrimps, mushrooms and peppers",
-    price: "$59.95"
+    name: "Green salad",
+    description: "Green salad with romaine lettuce, shallots, dill, olives",
+    price: "$11.99 (small), $18.99 (large)",
+    category: "Salads",
   },
   {
     id: 15,
-    name: "Sherbrooke Seafood Platter",
-    description: "Greek salad, grilled shrimp (4), salmon (1), grilled octopus, fried calamari",
-    price: "$70.00"
+    name: "Green salad with grilled chicken",
+    description: "Green salad with grilled chicken",
+    price: "$21.99",
+    category: "Salads",
   },
   {
     id: 16,
-    name: "Sherbrooke Land & Sea Platter",
-    description: "Amira's Special: Greek salad, chicken breast fillet, filet mignon skewer (1), lamb chop (4), grilled shrimp (4), salmon (1), fried calamari",
-    price: "$115.00"
-  },
-  {
-    id: 17,
-    name: "Hussain Special",
-    description: "Specialia: kabab (2), fried calamari, beef entrecôte, lamb chops (8), braised half chicken, chicken wings (8)",
-    price: "$145.00"
+    name: "Greek salad",
+    description: "Greek salad with cucumbers, tomatoes, red onions, Kalamata olives, olive oil, red wine vinegar",
+    price: "$14.99 (small), $21.99 (large)",
+    category: "Salads",
   },
   {
     id: 18,
-    name: "1.2kg Mixed Grills",
-    description: "400g souvlaki, 200g kabab, 200g filet mignon, 200g chicken shawarma, 200g beef shawarma",
-    price: "$65.00"
+    name: "Grilled chicken filet",
+    description: "Grilled chicken filet",
+    price: "$22.99",
+    category: "Grills",
+  },
+  {
+    id: 19,
+    name: "Chicken brochette (2 pcs)",
+    description: "2 pieces of chicken brochette",
+    price: "$26.99",
+    category: "Grills",
+  },
+  {
+    id: 20,
+    name: "Lamb chops (4 pcs)",
+    description: "4 pieces of lamb chops",
+    price: "$35.99",
+    category: "Grills",
+  },
+  {
+    id: 21,
+    name: "1 Lamb chop",
+    description: "1 lamb chop",
+    price: "$7.99",
+    category: "Grills",
+  },
+  {
+    id: 22,
+    name: "Rib steak (14 oz)",
+    description: "14 oz rib steak",
+    price: "$36.99",
+    category: "Grills",
+  },
+  {
+    id: 23,
+    name: "Mix grill platter",
+    description: "Mix grill platter with chicken, lamb chop, shrimps, mushrooms and peppers",
+    price: "$59.95",
+    category: "Grills",
+  },
+  {
+    id: 24,
+    name: "Chicken souvlaki",
+    description: "Chicken souvlaki",
+    price: "$15.99",
+    category: "Grills",
+  },
+  {
+    id: 25,
+    name: "Salmon",
+    description: "Salmon",
+    price: "$22.99 (single), $35.99 (1 person), $54.99 (2 persons)",
+    category: "Fish & Seafood",
+  },
+  {
+    id: 26,
+    name: "Mediterranean sea bass",
+    description: "Mediterranean sea bass",
+    price: "$54.99",
+    category: "Fish & Seafood",
+  },
+  {
+    id: 27,
+    name: "Grilled jumbo shrimps (4 pcs)",
+    description: "4 pieces of grilled jumbo shrimps",
+    price: "$35.99",
+    category: "Fish & Seafood",
+  },
+  {
+    id: 28,
+    name: "Jumbo shrimp (6x8)",
+    description: "Jumbo shrimp (6x8)",
+    price: "$9.99",
+    category: "Fish & Seafood",
+  },
+  {
+    id: 29,
+    name: "Group Menu 1",
+    description:
+      "Includes Fried zucchini and eggplant, Spanokopita, Green or Greek salad, with a choice of: Moussaka or Greek pastas, Chicken brochette, or Salmon.",
+    price: "$45.00",
+    category: "Group Menus",
+  },
+  {
+    id: 30,
+    name: "Group Menu 2",
+    description:
+      "Includes Fried zucchini and eggplant, Grilled oyster mushrooms and peppers, Green or Greek salad, with a choice of: Sea bass, Chicken fillet, or Lamb chop.",
+    price: "$55.00",
+    category: "Group Menus",
+  },
+  {
+    id: 31,
+    name: "Group Menu 3 (Special Cabasyl)",
+    description:
+      "Includes Fried zucchini and eggplant, Calamari, Grilled oyster mushrooms and peppers, Greek salad, with a choice of: Sea bass, Chicken fillet, or Lamb chop.",
+    price: "$60.00",
+    category: "Group Menus",
+  },
+  {
+    id: 32,
+    name: "Group Menu 4 (Special Cabasyl)",
+    description:
+      "Includes Fried zucchini and eggplant, Grilled octopus, Grilled oyster mushrooms and peppers, Greek salad, with a choice of: Chilean bass, Chicken & jumbo shrimps, 2 Lamb chops and 2 jumbo shrimps, or Fillet mignon and 1 jumbo shrimp.",
+    price: "$75.00",
+    category: "Group Menus",
   },
 ];

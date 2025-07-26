@@ -65,8 +65,20 @@ export default function CarouselHighlights({ highlights, sectionTitle }: Carouse
               src={highlights[carouselIndex].image}
               alt={highlights[carouselIndex].title}
               fill
-              className={`object-cover rounded-xl`}
-              style={{ transition: 'transform 0.3s' }}
+              className={`object-contain rounded-xl`}
+              style={{ 
+                transition: 'transform 0.3s',
+                objectPosition: 'center center',
+                transform: highlights[carouselIndex].image.includes('sandwichs pitas.png') ? 'scale(1.2)' : 
+                          highlights[carouselIndex].image.includes('veggie sub.png') ? 'scale(1.4)' :
+                          highlights[carouselIndex].image.includes('daal.png') ? 'scale(1.4)' :
+                          highlights[carouselIndex].image.includes('butter chicken.png') ? 'scale(1.4)' :
+                          highlights[carouselIndex].image.includes('sea-bass.png') ? 'scale(1.5)' :
+                          highlights[carouselIndex].image.includes('salmon.png') ? 'scale(1.5)' :
+                          highlights[carouselIndex].image.includes('Chicken Greek Pasta.png') ? 'scale(1.6)' :
+                          highlights[carouselIndex].image.includes('mushroom pizza.png') ? 'scale(1.6)' :
+                          highlights[carouselIndex].image.includes('pasta.png') ? 'scale(1.6)' : 'scale(1)'
+              }}
             />
           </div>
           <button

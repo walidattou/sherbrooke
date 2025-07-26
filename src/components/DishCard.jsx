@@ -6,8 +6,50 @@ import { useState } from "react";
 export default function DishCard({ dish, index, isPopular = false, isSpecial = false, variant = "default" }) {
   const [isHovered, setIsHovered] = useState(false);
 
+  // Parse price to handle multiple options
+  const parsePrice = (priceString) => {
+    // Check if price contains multiple options (like "small, regular, large")
+    if (priceString.includes('(') && priceString.includes(')')) {
+      const parts = priceString.split(',');
+      if (parts.length > 1) {
+        return {
+          hasMultipleOptions: true,
+          options: parts.map(part => {
+            const match = part.match(/\$([\d.]+)\s*\(([^)]+)\)/);
+            if (match) {
+              return { price: `$${match[1]}`, size: match[2].trim() };
+            }
+            return null;
+          }).filter(Boolean)
+        };
+      }
+    }
+    
+    // Check if price contains multiple options with "sandwich" and "trio"
+    if (priceString.includes('sandwich') && priceString.includes('trio')) {
+      const sandwichMatch = priceString.match(/\$([\d.]+)\s*\(sandwich\)/);
+      const trioMatch = priceString.match(/\$([\d.]+)\s*\(trio\)/);
+      if (sandwichMatch && trioMatch) {
+        return {
+          hasMultipleOptions: true,
+          options: [
+            { price: `$${sandwichMatch[1]}`, size: 'Sandwich' },
+            { price: `$${trioMatch[1]}`, size: 'Trio' }
+          ]
+        };
+      }
+    }
+
+    return {
+      hasMultipleOptions: false,
+      price: priceString
+    };
+  };
+
+  const priceInfo = parsePrice(dish.price);
+
   // Determine if this is a high-value/premium dish
-  const priceValue = parseFloat(dish.price.replace('$', ''));
+  const priceValue = parseFloat(dish.price.replace(/[$,]/g, ''));
   const isPremium = priceValue > 30;
 
   // Different styles based on variant
@@ -72,12 +114,26 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
               {dish.description}
             </p>
             <div className="flex justify-start">
-              <motion.span
-                animate={{ scale: isHovered ? 1.1 : 1 }}
-                className="text-4xl font-bold text-[#BF9040]"
-              >
-                {dish.price}
-              </motion.span>
+              {priceInfo.hasMultipleOptions ? (
+                <div className="space-y-2">
+                  {priceInfo.options.map((option, idx) => (
+                    <motion.div
+                      key={idx}
+                      animate={{ scale: isHovered ? 1.05 : 1 }}
+                      className="flex items-center gap-3"
+                    >
+                      <span className="text-2xl font-bold text-[#BF9040]">{option.price} - {option.size}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              ) : (
+                <motion.span
+                  animate={{ scale: isHovered ? 1.1 : 1 }}
+                  className="text-4xl font-bold text-[#BF9040]"
+                >
+                  {priceInfo.price}
+                </motion.span>
+              )}
             </div>
           </div>
         </div>
@@ -115,21 +171,33 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
               <h4 className="text-lg font-semibold text-white group-hover:text-[#BF9040] transition-colors duration-300 flex-1 pr-2">
                 {dish.name}
               </h4>
-              <span className="text-xl font-bold text-[#BF9040] flex-shrink-0">
-                {dish.price}
-              </span>
+              <div className="flex-shrink-0">
+                {priceInfo.hasMultipleOptions ? (
+                  <div className="text-right space-y-1">
+                    {priceInfo.options.map((option, idx) => (
+                      <div key={idx} className="text-sm">
+                        <span className="text-lg font-bold text-[#BF9040]">{option.price} - {option.size}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <span className="text-xl font-bold text-[#BF9040]">
+                    {priceInfo.price}
+                  </span>
+                )}
+              </div>
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               {dish.description}
             </p>
 
-                         <div className="flex items-center">
-               <span className="text-xs text-gray-500 flex items-center gap-1">
-                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-                 Available
-               </span>
-             </div>
+            <div className="flex items-center">
+              <span className="text-xs text-gray-500 flex items-center gap-1">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                Available
+              </span>
+            </div>
           </div>
         </div>
       </motion.div>
@@ -196,16 +264,26 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
               transition={{ duration: 0.2 }}
               className="flex-shrink-0"
             >
-              <span className="text-2xl font-bold text-[#BF9040] relative">
-                {dish.price}
-                {isHovered && (
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    className="absolute -inset-2 bg-[#BF9040]/20 rounded-lg blur -z-10"
-                  />
-                )}
-              </span>
+              {priceInfo.hasMultipleOptions ? (
+                <div className="text-right space-y-1">
+                  {priceInfo.options.map((option, idx) => (
+                    <div key={idx} className="text-sm">
+                      <span className="text-xl font-bold text-[#BF9040]">{option.price} - {option.size}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <span className="text-2xl font-bold text-[#BF9040] relative">
+                  {priceInfo.price}
+                  {isHovered && (
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="absolute -inset-2 bg-[#BF9040]/20 rounded-lg blur -z-10"
+                    />
+                  )}
+                </span>
+              )}
             </motion.div>
           </div>
 
@@ -213,20 +291,20 @@ export default function DishCard({ dish, index, isPopular = false, isSpecial = f
             {dish.description}
           </p>
 
-                      <div className="flex items-center gap-4 text-sm text-gray-500">
-              <span className="flex items-center gap-1">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                Available
-              </span>
-              
-              <span className="text-gray-400">
-              {dish.name.toLowerCase().includes('chicken') && 'Chicken'}
-              {dish.name.toLowerCase().includes('lamb') && 'Lamb'}
-              {dish.name.toLowerCase().includes('beef') && 'Beef'}
-              {(dish.name.toLowerCase().includes('fish') || dish.name.toLowerCase().includes('salmon') || dish.name.toLowerCase().includes('shrimp')) && 'Seafood'}
-              {dish.name.toLowerCase().includes('vegetable') && 'Vegetarian'}
-              </span>
-            </div>
+          <div className="flex items-center gap-4 text-sm text-gray-500">
+            <span className="flex items-center gap-1">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              Available
+            </span>
+            
+            <span className="text-gray-400">
+            {dish.name.toLowerCase().includes('chicken') && 'Chicken'}
+            {dish.name.toLowerCase().includes('lamb') && 'Lamb'}
+            {dish.name.toLowerCase().includes('beef') && 'Beef'}
+            {(dish.name.toLowerCase().includes('fish') || dish.name.toLowerCase().includes('salmon') || dish.name.toLowerCase().includes('shrimp')) && 'Seafood'}
+            {dish.name.toLowerCase().includes('vegetable') && 'Vegetarian'}
+            </span>
+          </div>
         </div>
 
         <motion.div

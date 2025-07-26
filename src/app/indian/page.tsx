@@ -2,7 +2,7 @@
 
 import PageWrapper from "@/components/PageWrapper";
 import MenuContainer from "@/components/MenuContainer";
-import { indianData } from "@/data/indian";
+import { menuItems } from "@/data/indian.js";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
@@ -60,14 +60,16 @@ export default function Indian() {
 
       {/* Premium Menu Section */}
       <MenuContainer 
-        dishes={indianData} 
+        dishes={menuItems} 
         title="Indian"
         description="Experience authentic Indian cuisine with our carefully curated selection of traditional dishes, rich in spices and flavors."
         popularDishes={[
           "Chicken Vindaloo",
           "Lamb Tikka Masala",
           "Lamb Biryani",
-          "Paneer Masala"
+          "Paneer Masala",
+          "Butter Chicken",
+          "Naan"
         ] as string[]}
       />
     </PageWrapper>
