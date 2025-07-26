@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import DishCard from "./DishCard";
 import FilterBar from "./FilterBar";
 import LoadingSpinner from "./LoadingSpinner";
-import Image from "next/image";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import CarouselHighlights from './CarouselHighlights';
 
 interface Dish {
@@ -599,7 +597,7 @@ export default function MenuContainer({
               {/* Additional Chef's Special dishes */}
               <div className="p-4 bg-gray-800/50 rounded-lg border border-[#BF9040]/30">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="px-2 py-1 bg-[#BF9040] text-black text-xs font-bold rounded">Chef's Special</span>
+                  <span className="px-2 py-1 bg-[#BF9040] text-black text-xs font-bold rounded">Chef&apos;s Special</span>
                 </div>
                 <h4 className="font-semibold text-[#BF9040] mb-2">Whole Chicken</h4>
                 <p className="text-sm text-gray-300 mb-2">Juicy whole chicken marinated in spices and grilled to perfection.</p>
@@ -608,7 +606,7 @@ export default function MenuContainer({
               
               <div className="p-4 bg-gray-800/50 rounded-lg border border-[#BF9040]/30">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="px-2 py-1 bg-[#BF9040] text-black text-xs font-bold rounded">Chef's Special</span>
+                  <span className="px-2 py-1 bg-[#BF9040] text-black text-xs font-bold rounded">Chef&apos;s Special</span>
                 </div>
                 <h4 className="font-semibold text-[#BF9040] mb-2">Chicken Wings (20 pcs)</h4>
                 <p className="text-sm text-gray-300 mb-2">Twenty pieces of spicy grilled chicken wings.</p>

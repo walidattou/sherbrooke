@@ -293,7 +293,7 @@ export default function PastaPizza() {
                 {/* Chef's Special Section */}
                 <div className="mb-12">
                   <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                    <span className="text-[#BF9040]">Chef's</span> Special
+                    <span className="text-[#BF9040]">Chef&apos;s</span> Special
                   </h2>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <DishCard
