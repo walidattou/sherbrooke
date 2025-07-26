@@ -300,7 +300,7 @@ export default function PastaPizza() {
                       key="butter-chicken-pizza-special"
                       dish={{
                         id: 9998,
-                        name: "Butter Chicken 'INDIAN' Pizza",
+                        name: "Butter Chicken &apos;INDIAN&apos; Pizza",
                         description: "Butter chicken sauce, chicken, cheese",
                         price: "$19.99"
                       }}
