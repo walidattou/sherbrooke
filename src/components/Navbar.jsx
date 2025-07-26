@@ -50,14 +50,10 @@ export default function Navbar() {
               ? 'bg-white/95'
               : 'bg-white/90'
               } transition-all duration-300 shadow-lg`}>
-              <Image
-                src="/logo.jpg?v=2"
+              <img
+                src="/logo.jpg"
                 alt="Sherbrooke Grill & Pizza /Resto Cabasyl Logo"
-                width={120}
-                height={60}
                 className="h-12 w-auto object-contain"
-                priority
-                unoptimized
               />
             </div>
           </Link>
